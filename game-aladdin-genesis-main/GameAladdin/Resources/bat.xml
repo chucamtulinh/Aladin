@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animations>
+  <Animation name="fly" imagePath="Bat-transparent.png" width="344" height="171">
+    <sprite x="20" y="10" w="20" h="21" oX="20" oY="10" oW="21" oH="77" />
+    <sprite x="48" y="13" w="19" h="22" oX="48" oY="13" oW="21" oH="77" />
+    <sprite x="9" y="18" w="7" h="15" oX="9" oY="18" oW="21" oH="77" />
+    <sprite x="76" y="18" w="21" h="13" oX="76" oY="18" oW="21" oH="77" />
+    <sprite x="20" y="10" w="21" h="0" oX="20" oY="10" oW="21" oH="77" />
+  </Animation>
+</Animations>

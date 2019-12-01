@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animations>
+  <Animation name="Idle" imagePath="Aladdin_trans.png" width="1121" height="2718" />
+  <Animation name="1" imagePath="Aladdin_trans.png" width="1121" height="2718">
+    <sprite x="156" y="4" w="44" h="54" oX="156" oY="4" oW="50" oH="328" />
+    <sprite x="301" y="6" w="44" h="52" oX="301" oY="6" oW="50" oH="328" />
+    <sprite x="106" y="7" w="40" h="51" oX="106" oY="7" oW="50" oH="328" />
+    <sprite x="205" y="8" w="41" h="50" oX="205" oY="8" oW="50" oH="328" />
+    <sprite x="253" y="8" w="42" h="50" oX="253" oY="8" oW="50" oH="328" />
+    <sprite x="6" y="9" w="37" h="49" oX="6" oY="9" oW="50" oH="328" />
+    <sprite x="54" y="12" w="41" h="46" oX="54" oY="12" oW="50" oH="328" />
+  </Animation>
+</Animations>

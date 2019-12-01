@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="2269" tileheight="1138" infinite="0" nextlayerid="4" nextobjectid="4">
+ <tileset firstgid="1" name="SultansDungeon" tilewidth="2269" tileheight="1138" tilecount="3" columns="1">
+  <image source="SultansDungeon.png" width="2269" height="3414"/>
+ </tileset>
+ <layer id="1" name="Tile Layer 1" width="1" height="1">
+  <data encoding="base64" compression="zlib">
+   eJxjZGBgAAAACAAC
+  </data>
+ </layer>
+ <objectgroup id="2" name="Ground">
+  <object id="1" x="0" y="1102" width="2269" height="36"/>
+ </objectgroup>
+ <objectgroup id="3" name="Player">
+  <object id="2" x="80.6667" y="1012" width="37" height="50"/>
+ </objectgroup>
+</map>
