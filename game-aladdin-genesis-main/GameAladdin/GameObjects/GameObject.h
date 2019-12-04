@@ -1,4 +1,5 @@
-#pragma once
+#ifndef GAMEOBJECT_H
+#define GAMEOBJECT_H
 
 #include <d3d9.h>
 #include <d3dx9.h>
@@ -61,6 +62,9 @@ protected:
 
 	bool _isDisappear;
 public:
+	int _id;
+	void SetId(int id);
+	int GetId();
 	GameObject(GameObjectType tag = None, bool isMovableObject = true);
 	virtual ~GameObject();
 
@@ -109,4 +113,6 @@ public:
 	virtual bool GetIsDisappear();
 	virtual void SetIsDisappear(bool);
 };
+
+#endif // !GAMEOBJECT_H
 

@@ -3,6 +3,7 @@
 #include <d3d9.h>
 #include <d3dx9.h>
 #include "QuadTree.h"
+#include "../Grid.h"
 #include "GameMap.h"
 
 class Scene
@@ -23,7 +24,7 @@ public:
 	virtual ~Scene();
 
 	D3DCOLOR GetBackcolor();
-	QuadTree* GetQuadTree();
+	Grid* GetGrid();
 
 	Camera* GetCamera();
 	void SetCamera(Camera* camera);
@@ -41,6 +42,7 @@ public:
 protected:
 	D3DCOLOR _backgroundColor;
 	QuadTree* _quadTree;
+	Grid* _grid;
 
 	Camera* _camera;
 	GameMap* _gameMap;

@@ -27,9 +27,9 @@ D3DCOLOR Scene::GetBackcolor()
 	return _backgroundColor;
 }
 
-QuadTree * Scene::GetQuadTree()
+Grid * Scene::GetGrid()
 {
-	return _quadTree;
+	return _grid;
 }
 
 Camera * Scene::GetCamera()
@@ -62,7 +62,7 @@ void Scene::Update(float deltaTime)
 	{
 		if (!_listWeapon[i]->IsVisible())
 		{
-			QuadTree::RemoveDynamicObject(_listWeapon[i]);
+			Grid::RemoveDynamicObject(_listWeapon[i]);
 			_listWeapon.erase(_listWeapon.begin() + i);
 			continue;
 		}

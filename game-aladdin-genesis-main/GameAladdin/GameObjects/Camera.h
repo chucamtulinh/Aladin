@@ -1,4 +1,5 @@
-#pragma once
+#ifndef CAMERA_H
+#define	CAMERA_H
 
 #include <d3d9.h>
 #include <d3dx9.h>
@@ -33,3 +34,5 @@ public:
 	D3DXVECTOR2 ConvertPosition(D3DXVECTOR2 position);
 	D3DXVECTOR2 ConvertPosition(float x, float y);
 };
+
+#endif // !CAMERA_H

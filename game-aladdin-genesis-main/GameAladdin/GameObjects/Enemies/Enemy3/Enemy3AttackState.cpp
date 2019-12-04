@@ -40,8 +40,8 @@ void Enemy3AttackState::Update(float deltaTime)
 		//add gameobject to update&draw list
 		SceneManager::GetInstance()->GetCurrentScene()->AddGameObjectToWeaponList(weapon);
 
-		//add appleWeapon to QuadTree
-		QuadTree::InsertDynamicObject(weapon);
+		//add appleWeapon 
+		Grid::InsertDynamicObject(weapon);
 	}
 	//reset _isCreatedWeapon
 	if (_animation->GetCurrentIndex() == 3)

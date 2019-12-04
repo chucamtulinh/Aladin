@@ -1,7 +1,9 @@
-#pragma once
+#ifndef GAMEMAP_H
+#define GAMEMAP_H
+
 
 #include "Sprite.h"
-#include "QuadTree.h"
+#include "../Grid.h"
 #include "../TmxParser/Tmx.h.in"
 #include "../GameObjects/Camera.h"
 #include "../GameObjects/Items/Apple.h"
@@ -29,7 +31,7 @@ private:
 	//don't use tileset for this game
 	//std::map<int, Sprite*> _listTileSet;
 	Tmx::Map *_map;
-	QuadTree* _quadTree;
+	Grid* _grid;
 
 	Player* _player;
 
@@ -46,8 +48,8 @@ private:
 	GameObject* _objectCenter;
 public:
 	GameMap();
-	//use QuadTree* &quadTree because quadTree is init in this function
-	GameMap(char* filePath, QuadTree* &quadTree);
+	//use Grid* &grid because grid is init in this function
+	GameMap(char* filePath, Grid* &grid);
 	~GameMap();
 
 	void Update(float deltaTime);
@@ -60,4 +62,6 @@ public:
 
 	GameObject* GetObjectCenter();
 };
+
+#endif // !GAMEMAP_H
 

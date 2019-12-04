@@ -2,6 +2,16 @@
 #include "Camera.h"
 #include "../GameComponents/SceneManager.h"
 
+void GameObject::SetId(int id)
+{
+	_id = id;
+}
+
+int GameObject::GetId()
+{
+	return _id;
+}
+
 GameObject::GameObject(GameObjectType tag, bool isMovableObject)
 {
 	_tag = tag;
@@ -76,7 +86,8 @@ void GameObject::Update(float deltaTime)
 void GameObject::CheckCollision()
 {
 	std::vector<GameObject*> listCanCollide;
-	SceneManager::GetInstance()->GetCurrentScene()->GetQuadTree()->Retrieve(listCanCollide, this);
+	Camera * camera = SceneManager::GetInstance()->GetCurrentScene()->GetCamera();
+	SceneManager::GetInstance()->GetCurrentScene()->GetGrid()->GetListObject(listCanCollide, camera);
 	for (size_t i = 0; i < listCanCollide.size(); i++)
 	{
 		GameObject *gameObject = listCanCollide.at(i);
