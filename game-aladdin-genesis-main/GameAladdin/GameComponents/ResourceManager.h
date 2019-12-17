@@ -23,6 +23,7 @@ private:
 	tinyxml2::XMLDocument *_animationXMLCamel;
 	tinyxml2::XMLDocument *_animationXMLCoalFire;
 	tinyxml2::XMLDocument *_animationXMLBottle;
+	tinyxml2::XMLDocument *_animationXMLFloatGround;
 	tinyxml2::XMLDocument *_animationXMLItemSpark;
 	tinyxml2::XMLDocument *_animationXMLEnemyDead;   ///////////////////////////
 	tinyxml2::XMLDocument *_animationXMLEnemy3Dead;
