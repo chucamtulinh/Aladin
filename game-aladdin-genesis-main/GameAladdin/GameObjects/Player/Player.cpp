@@ -378,7 +378,7 @@ void Player::OnCollision(GameObject * target, GameCollision::SideCollisions side
 	if (target->GetTag() == GameObject::GameObjectType::Enemies)
 	{
 		Enemy *enemy = dynamic_cast<Enemy*>(target);
-		if (enemy->GetState()->GetName() == EnemyState::StateName::Attack
+		if ((enemy->GetState()->GetName() == EnemyState::StateName::Attack || enemy->GetState()->GetName() == EnemyState::StateName::Fly)
 			&& !enemy->GetState()->GetAnimation()->IsBegin()
 			&& !enemy->GetState()->IsAttackedPlayer())
 		{

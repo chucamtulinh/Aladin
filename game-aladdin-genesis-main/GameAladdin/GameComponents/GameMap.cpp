@@ -95,6 +95,16 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 			}
 
 			//init Enemies
+			/*if (objectGroup->GetName() == "Bat")
+			{
+				Enemy *enemy = new Bat(_player);
+				enemy->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
+
+				_listEnemies.push_back(enemy);
+
+				QuadTree::InsertDynamicObject(enemy);
+			}*/
+			
 			if (objectGroup->GetName() == "Enemy_1")
 			{
 				Enemy *enemy = new Enemy1(_player);

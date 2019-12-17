@@ -9,7 +9,7 @@ class EnemyState
 public:
 	enum StateName
 	{
-		Idle, Walk, Attack, Damage, Jafar, Snake
+		Idle, Walk, Attack, Damage, Jafar, Snake, Fly
 	};
 	EnemyState();
 	EnemyState(Enemy *enemy, StateName name = StateName::Idle);
