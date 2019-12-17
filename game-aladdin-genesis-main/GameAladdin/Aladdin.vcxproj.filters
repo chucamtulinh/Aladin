@@ -73,12 +73,6 @@
     <Filter Include="GameObjects\Items\ScoreObject">
       <UniqueIdentifier>{fe39e646-9fad-4a82-87d4-11e3d49f63c6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="GameObjects\Enemies\Skeleton">
-      <UniqueIdentifier>{c9d0d6e6-554e-4bc6-8f3b-75c082cf32cf}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="GameObjects\Enemies\Bat">
-      <UniqueIdentifier>{41dde313-4185-4e10-81f4-96287e37a8ee}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameComponents\Animation.cpp">
@@ -440,18 +434,6 @@
     </ClCompile>
     <ClCompile Include="Scenes\SelectScene.cpp">
       <Filter>Scenes</Filter>
-    </ClCompile>
-    <ClCompile Include="Bat.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="BatIdleState.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="BatDamageState.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="BatFlyState.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -817,18 +799,6 @@
     </ClInclude>
     <ClInclude Include="Scenes\SelectScene.h">
       <Filter>Scenes</Filter>
-    </ClInclude>
-    <ClInclude Include="Bat.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BatIdleState.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BatDamageState.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BatFlyState.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

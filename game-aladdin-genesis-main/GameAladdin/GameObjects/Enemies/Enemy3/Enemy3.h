@@ -9,7 +9,6 @@ private:
 public:
 	Enemy3();
 	Enemy3(GameObject * player);
-	void Update(float deltaTime);
 	~Enemy3();
 
 	//void Update(float deltaTime);

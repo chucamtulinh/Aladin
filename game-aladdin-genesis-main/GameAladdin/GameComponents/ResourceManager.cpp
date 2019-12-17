@@ -42,7 +42,7 @@ ResourceManager::ResourceManager()
 	_animationXMLEnemy2->LoadFile("Resources/Enemies/Enemy-2-Animations.xml");
 
 	_animationXMLEnemy3 = new tinyxml2::XMLDocument();
-	_animationXMLEnemy3->LoadFile("Resources/Enemies/Bat-Animations.xml");
+	_animationXMLEnemy3->LoadFile("Resources/Enemies/Enemy-3-Animations.xml");
 
 	_animationXMLEnemy4 = new tinyxml2::XMLDocument();
 	_animationXMLEnemy4->LoadFile("Resources/Enemies/Enemy-4-Animations.xml");
@@ -99,7 +99,6 @@ ResourceManager::ResourceManager()
 
 	_textureEnemies1 = graphics->LoadTexture(L"Resources/Enemies/Enemies_Sprite_1.png", D3DCOLOR_XRGB(120, 193, 152));
 	_textureEnemies2 = graphics->LoadTexture(L"Resources/Enemies/Enemies_Sprite_2.png", D3DCOLOR_XRGB(120, 193, 152));
-	_textureEnemies3 = graphics->LoadTexture(L"Resources/Enemies/Bat-trans.png", D3DCOLOR_XRGB(255, 0, 255));
 	_textureItems = graphics->LoadTexture(L"Resources/Items/Items.png", D3DCOLOR_XRGB(248, 0, 248));
 	_textureCamel = graphics->LoadTexture(L"Resources/Items/Camel.png", D3DCOLOR_XRGB(248, 0, 248));
 	_textureSultanDungeon = graphics->LoadTexture(L"Resources/Maps/SultansDungeon/SultansDungeon.png");
@@ -255,11 +254,6 @@ tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLPlayerClimbThrow()
 	return _animationXMLPlayerClimbThrow;
 }
 
-tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLBat()
-{
-	return _animationXMLBat;
-}
-
 tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLEnemy1()
 {
 	return _animationXMLEnemy1;
@@ -405,10 +399,6 @@ LPDIRECT3DTEXTURE9 ResourceManager::GetTextureEnemies2()
 	return _textureEnemies2;
 }
 
-LPDIRECT3DTEXTURE9 ResourceManager::GetTextureEnemies3()
-{
-	return _textureEnemies3;
-}
 LPDIRECT3DTEXTURE9 ResourceManager::GetTextureItems()
 {
 	return _textureItems;

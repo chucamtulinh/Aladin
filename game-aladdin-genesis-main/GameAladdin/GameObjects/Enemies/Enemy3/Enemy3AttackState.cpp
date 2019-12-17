@@ -12,7 +12,7 @@ Enemy3AttackState::Enemy3AttackState()
 
 Enemy3AttackState::Enemy3AttackState(Enemy * enemy) : EnemyState(enemy, EnemyState::StateName::Attack)
 {
-	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLEnemy3(), "Attack", ResourceManager::GetInstance()->GetTextureEnemies3(), false, 1.0f));
+	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLEnemy3(), "Attack", ResourceManager::GetInstance()->GetTextureEnemies1(), false, 1.0f));
 
 	_isCreatedWeapon = false;
 }
