@@ -75,7 +75,7 @@ void PlayerClimbThrowState::Update(float deltaTime)
 		SceneManager::GetInstance()->GetCurrentScene()->AddGameObjectToWeaponList(appleWeapon);
 
 		//add appleWeapon to QuadTree
-		Grid::InsertDynamicObject(appleWeapon);
+		QuadTree::InsertDynamicObject(appleWeapon);
 	}
 
 	if (_animation->IsFinish())//change state
