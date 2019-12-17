@@ -9,6 +9,8 @@ private:
 	static ResourceManager *_instance;
 
 	tinyxml2::XMLDocument *_animationXMLAladdin;
+	
+	tinyxml2::XMLDocument *_animationXMLBat;
 	tinyxml2::XMLDocument *_animationXMLEnemy1;
 	tinyxml2::XMLDocument *_animationXMLEnemy2;
 	tinyxml2::XMLDocument *_animationXMLEnemy3;
@@ -43,6 +45,7 @@ private:
 	LPDIRECT3DTEXTURE9 _textureAladdin;
 	LPDIRECT3DTEXTURE9 _textureEnemies1;
 	LPDIRECT3DTEXTURE9 _textureEnemies2;
+	LPDIRECT3DTEXTURE9 _textureEnemies3;
 	LPDIRECT3DTEXTURE9 _textureItems;
 	LPDIRECT3DTEXTURE9 _textureCamel;
 	LPDIRECT3DTEXTURE9 _textureSelect;
@@ -87,6 +90,7 @@ public:
 	tinyxml2::XMLDocument* GetAnimationXMLSpringItem();
 	tinyxml2::XMLDocument* GetAnimationXMLAladdinUp();
 
+	tinyxml2::XMLDocument* GetAnimationXMLBat();
 	tinyxml2::XMLDocument* GetAnimationXMLEnemy1();
 	tinyxml2::XMLDocument* GetAnimationXMLEnemy2();
 	tinyxml2::XMLDocument* GetAnimationXMLEnemy3();
@@ -120,6 +124,7 @@ public:
 
 	LPDIRECT3DTEXTURE9 GetTextureEnemies1();
 	LPDIRECT3DTEXTURE9 GetTextureEnemies2();
+	LPDIRECT3DTEXTURE9 GetTextureEnemies3();
 	LPDIRECT3DTEXTURE9 GetTextureItems();
 	LPDIRECT3DTEXTURE9 GetTextureCamel();
 	LPDIRECT3DTEXTURE9 GetTextureSultanDungeon();

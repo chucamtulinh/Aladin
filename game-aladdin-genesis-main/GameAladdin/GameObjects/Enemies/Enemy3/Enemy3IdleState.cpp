@@ -11,7 +11,7 @@ Enemy3IdleState::Enemy3IdleState()
 
 Enemy3IdleState::Enemy3IdleState(Enemy * enemy) : EnemyState(enemy, EnemyState::StateName::Idle)
 {
-	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLEnemy3(), "Idle", ResourceManager::GetInstance()->GetTextureEnemies1(), false, 0.8f));
+	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLEnemy3(), "Idle", ResourceManager::GetInstance()->GetTextureEnemies3(), false, 0.8f));
 }
 
 
@@ -32,7 +32,14 @@ void Enemy3IdleState::Update(float deltaTime)
 
 	if (_enemy->IsTargetInAttackRange())
 	{
-		_enemy->SetState(new Enemy3AttackState(_enemy));
+		//_enemy->SetState(new Enemy3WalkState(_enemy));
+		//_enemy->SetState(new Enemy3AttackState(_enemy));
+		return;
+	}
+
+	if (_enemy->GetVelocity().x == 0)//change state
+	{
+		//_enemy->SetState(new Enemy3IdleState(_enemy));
 		return;
 	}
 

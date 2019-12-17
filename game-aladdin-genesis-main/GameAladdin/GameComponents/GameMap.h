@@ -8,6 +8,7 @@
 #include "../GameObjects/Items/FloatGround.h"
 #include "../GameObjects/Items/Springboard.h"
 #include "../GameObjects/Player/Player.h"
+#include "D:/New folder/Aladin/game-aladdin-genesis-main/GameAladdin//Bat.h"
 #include "../GameObjects/Enemies/Enemy1/Enemy1.h"
 #include "../GameObjects/Enemies/Enemy2/Enemy2.h"
 #include "../GameObjects/Enemies/Enemy3/Enemy3.h"

@@ -154,6 +154,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Bat.cpp" />
+    <ClCompile Include="BatDamageState.cpp" />
+    <ClCompile Include="BatFlyState.cpp" />
+    <ClCompile Include="BatIdleState.cpp" />
     <ClCompile Include="GameComponents\Animation.cpp" />
     <ClCompile Include="GameComponents\GameCollision.cpp" />
     <ClCompile Include="GameComponents\GameTime.cpp" />
@@ -276,6 +280,10 @@
     <ClCompile Include="TmxParser\TmxUtil.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Bat.h" />
+    <ClInclude Include="BatDamageState.h" />
+    <ClInclude Include="BatFlyState.h" />
+    <ClInclude Include="BatIdleState.h" />
     <ClInclude Include="GameComponents\Animation.h" />
     <ClInclude Include="GameComponents\define.h" />
     <ClInclude Include="GameComponents\GameCollision.h" />
