@@ -1,10 +1,10 @@
-#include "Enemy3Weapon.h"
+#include "Enemy4Weapon.h"
 
 
 
-Enemy3Weapon::Enemy3Weapon(int damage) : Weapon(Weapon::WeaponType::EnemiesWeapons, damage)
+Enemy4Weapon::Enemy4Weapon(int damage) : Weapon(Weapon::WeaponType::EnemiesWeapons, damage)
 {
-	_animation = new Animation(ResourceManager::GetInstance()->GetAnimationXMLEnemy3Weapon(), "Rotate", ResourceManager::GetInstance()->GetTextureEnemies1(), true, 0.3f);
+	_animation = new Animation(ResourceManager::GetInstance()->GetAnimationXMLEnemy4(), "Attack", ResourceManager::GetInstance()->GetTextureEnemies4(), true, 0.3f);
 
 	_width = _animation->GetWidth();
 	_height = _animation->GetHeight();
@@ -16,12 +16,12 @@ Enemy3Weapon::Enemy3Weapon(int damage) : Weapon(Weapon::WeaponType::EnemiesWeapo
 	_acceleration.y = _mass;
 }
 
-Enemy3Weapon::~Enemy3Weapon()
+Enemy4Weapon::~Enemy4Weapon()
 {
 	delete _animation;
 }
 
-void Enemy3Weapon::OnCollision(GameObject * target, GameCollision::SideCollisions side)
+void Enemy4Weapon::OnCollision(GameObject * target, GameCollision::SideCollisions side)
 {
 	//prevent collision with PlayerWeapons
 	if (target->GetTag() == GameObjectType::Weapons)

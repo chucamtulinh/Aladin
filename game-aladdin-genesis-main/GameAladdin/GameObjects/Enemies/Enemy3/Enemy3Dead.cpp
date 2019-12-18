@@ -1,7 +1,7 @@
 #include "Enemy3Dead.h"
 #include "Enemy3.h"
 #include "Enemy3WalkState.h"
-#include "../../Weapons/EnemiesWeapons/Enemy3Weapon.h"
+#include "../../Weapons/EnemiesWeapons/Enemy4Weapon.h"
 #include "../../../GameComponents/SceneManager.h"
 
 Enemy3Dead::Enemy3Dead()
@@ -11,7 +11,7 @@ Enemy3Dead::Enemy3Dead()
 
 Enemy3Dead::Enemy3Dead(Enemy * enemy) : EnemyState(enemy, EnemyState::StateName::Attack)
 {
-	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLEnemy3Dead(), "enemy3_dead", ResourceManager::GetInstance()->GetTextureEnemy3Dead(), true, 0.5f));
+	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLEnemy3Dead(), "Dead", ResourceManager::GetInstance()->GetTextureEnemies3(), true, 0.5f));
 
 }
 
@@ -29,7 +29,7 @@ void Enemy3Dead::Update(float deltaTime)
 	//{
 	//	_isCreatedWeapon = true;
 
-	//	Enemy3Weapon* weapon = new Enemy3Weapon();
+	//	Enemy4Weapon* weapon = new Enemy4Weapon();
 	//	weapon->SetPosition(_enemy->GetPosition().x, _enemy->GetPosition().y - _enemy->GetHeight() / 2);
 
 	//	//set left or right for velocityX

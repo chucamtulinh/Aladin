@@ -45,7 +45,7 @@ ResourceManager::ResourceManager()
 	_animationXMLEnemy3->LoadFile("Resources/Enemies/Bat-Animations.xml");
 
 	_animationXMLEnemy4 = new tinyxml2::XMLDocument();
-	_animationXMLEnemy4->LoadFile("Resources/Enemies/Enemy-4-Animations.xml");
+	_animationXMLEnemy4->LoadFile("Resources/Enemies/Skeleton-Animations.xml");
 
 	_animationXMLEnemy5 = new tinyxml2::XMLDocument();
 	_animationXMLEnemy5->LoadFile("Resources/Enemies/Enemy-5-Animations.xml");
@@ -59,8 +59,8 @@ ResourceManager::ResourceManager()
 	_animationXMLCamelWeapon = new tinyxml2::XMLDocument();
 	_animationXMLCamelWeapon->LoadFile("Resources/Weapons/PlayerWeapons/CamelWeapon-Animation.xml");
 
-	_animationXMLEnemy3Weapon = new tinyxml2::XMLDocument();
-	_animationXMLEnemy3Weapon->LoadFile("Resources/Weapons/EnemiesWeapons/Enemy-3-Weapon-Animations.xml");
+	_animationXMLEnemy4Weapon = new tinyxml2::XMLDocument();
+	_animationXMLEnemy4Weapon->LoadFile("Resources/Weapons/EnemiesWeapons/Enemy-3-Weapon-Animations.xml");
 
 	_animationXMLEnemy6Weapon = new tinyxml2::XMLDocument();
 	_animationXMLEnemy6Weapon->LoadFile("Resources/Weapons/EnemiesWeapons/Enemy-6-Weapon-Animations.xml");
@@ -100,6 +100,7 @@ ResourceManager::ResourceManager()
 	_textureEnemies1 = graphics->LoadTexture(L"Resources/Enemies/Enemies_Sprite_1.png", D3DCOLOR_XRGB(120, 193, 152));
 	_textureEnemies2 = graphics->LoadTexture(L"Resources/Enemies/Enemies_Sprite_2.png", D3DCOLOR_XRGB(120, 193, 152));
 	_textureEnemies3 = graphics->LoadTexture(L"Resources/Enemies/Bat-trans.png", D3DCOLOR_XRGB(255, 0, 255));
+	_textureEnemies4 = graphics->LoadTexture(L"Resources/Enemies/Skeleton.png", D3DCOLOR_XRGB(255, 0, 255));
 	_textureItems = graphics->LoadTexture(L"Resources/Items/Items.png", D3DCOLOR_XRGB(248, 0, 248));
 	_textureCamel = graphics->LoadTexture(L"Resources/Items/Camel.png", D3DCOLOR_XRGB(248, 0, 248));
 	_textureSultanDungeon = graphics->LoadTexture(L"Resources/Maps/SultansDungeon/SultansDungeon.png");
@@ -166,7 +167,7 @@ ResourceManager::~ResourceManager()
 	delete _animationXMLEnemy6;
 	delete _animationXMLAppleWeapon;
 	delete _animationXMLCamelWeapon;
-	delete _animationXMLEnemy3Weapon;
+	delete _animationXMLEnemy4Weapon;
 	delete _animationXMLEnemy6Weapon;
 	delete _animationXMLPlayerHealthMeter;
 	delete _animationXMLCamel;
@@ -300,9 +301,9 @@ tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLCamelWeapon()
 	return _animationXMLCamelWeapon;
 }
 
-tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLEnemy3Weapon()
+tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLEnemy4Weapon()
 {
-	return _animationXMLEnemy3Weapon;
+	return _animationXMLEnemy4Weapon;
 }
 
 tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLEnemy6Weapon()
@@ -409,6 +410,12 @@ LPDIRECT3DTEXTURE9 ResourceManager::GetTextureEnemies3()
 {
 	return _textureEnemies3;
 }
+
+LPDIRECT3DTEXTURE9 ResourceManager::GetTextureEnemies4()
+{
+	return _textureEnemies4;
+}
+
 LPDIRECT3DTEXTURE9 ResourceManager::GetTextureItems()
 {
 	return _textureItems;

@@ -2,7 +2,7 @@
 #include "Enemy3.h"
 #include "Enemy3WalkState.h"
 #include "Enemy3Dead.h"
-#include "../../Weapons/EnemiesWeapons/Enemy3Weapon.h"
+#include "../../Weapons/EnemiesWeapons/Enemy4Weapon.h"
 #include "../../../GameComponents/SceneManager.h"
 
 Enemy3AttackState::Enemy3AttackState()
@@ -31,7 +31,7 @@ void Enemy3AttackState::Update(float deltaTime)
 	{
 		_isCreatedWeapon = true;
 
-		Enemy3Weapon* weapon = new Enemy3Weapon();
+		Enemy4Weapon* weapon = new Enemy4Weapon();
 		weapon->SetPosition(_enemy->GetPosition().x, _enemy->GetPosition().y - _enemy->GetHeight() / 2);
 
 		//set left or right for velocityX

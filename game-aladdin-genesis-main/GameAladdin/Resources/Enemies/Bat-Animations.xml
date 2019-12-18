@@ -12,7 +12,7 @@
   <Animation name="Idle" imagePath="Bat.png" width="344" height="171">
     <sprite x="9" y="18" w="7" h="15" oX="9" oY="18" oW="-41" oH="76" />
   </Animation>
-  <Animation name="Damage" imagePath="Bat.png" width="344" height="171">
+  <Animation name="Dead" imagePath="Bat.png" width="344" height="171">
     <sprite x="10" y="119" w="13" h="12" oX="10" oY="119" oW="121" oH="301" />
     <sprite x="38" y="111" w="50" h="27" oX="38" oY="111" oW="121" oH="301" />
     <sprite x="93" y="113" w="22" h="22" oX="93" oY="113" oW="121" oH="301" />

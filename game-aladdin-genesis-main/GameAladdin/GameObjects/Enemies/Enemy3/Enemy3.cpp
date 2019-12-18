@@ -10,7 +10,6 @@ Enemy3::Enemy3()
 Enemy3::Enemy3(GameObject * player):Enemy(player)
 {
 	_state = new Enemy3IdleState(this);
-
 	_attackRangeX = 100;
 	_entryDead = false;
 	_speed = 20;
@@ -60,15 +59,15 @@ void Enemy3::Update(float deltaTime)
 			//_velocity.x = 0;
 		}
 
-		if (_distanceToTarget.y > 0 && _isMovableObject && _allowMoveRight)
+		if (_distanceToTarget.y -50 > 0 && _isMovableObject && _allowMoveRight)
 		{
 			//move right
-			//_velocity.y = _speed;
+			_velocity.y = _speed;
 		}
-		else if (_distanceToTarget.y < 0 && _isMovableObject && _allowMoveLeft)
+		else if (_distanceToTarget.y + 50 < 0 && _isMovableObject && _allowMoveLeft)
 		{
 			//move left
-			//_velocity.y = -1 * _speed;
+			_velocity.y = -1 * _speed;
 		}
 		else
 		{
@@ -81,14 +80,12 @@ void Enemy3::Update(float deltaTime)
 		//_velocity.x = 0;
 	}
 	
-
-
 	GameObject::Update(deltaTime);
 
 	if (_isInCamera || _allowUpdateWhenNotInCamera)
 		_state->Update(deltaTime);
 
 	//fix foot posY
-	_position.y = _footPosY - _height / 2;
+	//_position.y = _footPosY - _height / 2;
 }
 

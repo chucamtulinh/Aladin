@@ -2,11 +2,11 @@
 
 #include "../Weapon.h"
 
-class Enemy3Weapon : public Weapon
+class Enemy4Weapon : public Weapon
 {
 public:
-	Enemy3Weapon(int damage = 10);
-	~Enemy3Weapon();
+	Enemy4Weapon(int damage = 10);
+	~Enemy4Weapon();
 
 	void OnCollision(GameObject *target, GameCollision::SideCollisions side);
 };

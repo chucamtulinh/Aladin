@@ -354,9 +354,6 @@
     <ClCompile Include="GameObjects\Weapons\PlayerWeapons\AppleWeapon.cpp">
       <Filter>GameObjects\Weapons\PlayerWeapons</Filter>
     </ClCompile>
-    <ClCompile Include="GameObjects\Weapons\EnemiesWeapons\Enemy3Weapon.cpp">
-      <Filter>GameObjects\Weapons\EnemiesWeapons</Filter>
-    </ClCompile>
     <ClCompile Include="GameObjects\Enemies\Enemy2\Enemy2Damage1State.cpp">
       <Filter>GameObjects\Enemies\Enemy2</Filter>
     </ClCompile>
@@ -452,6 +449,9 @@
     </ClCompile>
     <ClCompile Include="BatFlyState.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Weapons\EnemiesWeapons\Enemy4Weapon.cpp">
+      <Filter>GameObjects\Weapons\EnemiesWeapons</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -728,9 +728,6 @@
     <ClInclude Include="GameObjects\Weapons\PlayerWeapons\AppleWeapon.h">
       <Filter>GameObjects\Weapons\PlayerWeapons</Filter>
     </ClInclude>
-    <ClInclude Include="GameObjects\Weapons\EnemiesWeapons\Enemy3Weapon.h">
-      <Filter>GameObjects\Weapons\EnemiesWeapons</Filter>
-    </ClInclude>
     <ClInclude Include="GameObjects\Enemies\Enemy2\Enemy2Damage1State.h">
       <Filter>GameObjects\Enemies\Enemy2</Filter>
     </ClInclude>
@@ -829,6 +826,9 @@
     </ClInclude>
     <ClInclude Include="BatFlyState.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Weapons\EnemiesWeapons\Enemy4Weapon.h">
+      <Filter>GameObjects\Weapons\EnemiesWeapons</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

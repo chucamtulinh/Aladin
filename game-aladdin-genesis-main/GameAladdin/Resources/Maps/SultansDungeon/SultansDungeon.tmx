@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.3.1" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="1" height="1" tilewidth="2269" tileheight="1138" infinite="0" nextlayerid="22" nextobjectid="414">
+<map version="1.2" tiledversion="1.3.1" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="1" height="1" tilewidth="2269" tileheight="1138" infinite="0" nextlayerid="23" nextobjectid="417">
  <tileset firstgid="1" name="SultansDungeon" tilewidth="2269" tileheight="1138" tilecount="3" columns="1">
   <image source="SultansDungeon.png" width="2269" height="3414"/>
  </tileset>
@@ -277,9 +277,10 @@
   <object id="386" gid="6" x="2175.33" y="815.667" width="44" height="58" visible="0"/>
  </objectgroup>
  <objectgroup id="21" name="Enemy_3">
-  <object id="406" gid="13" x="215.5" y="1067" width="7" height="16"/>
-  <object id="407" gid="13" x="250" y="1030" width="7" height="16"/>
-  <object id="408" gid="13" x="292.5" y="1064.5" width="7" height="16"/>
+  <object id="416" x="231" y="1045.5" height="0.5"/>
+ </objectgroup>
+ <objectgroup id="22" name="Enemy_4_Left">
+  <object id="415" gid="15" x="146" y="1101" width="50" height="82"/>
  </objectgroup>
  <objectgroup id="20" name="Skeleton">
   <object id="371" gid="15" x="571" y="916" width="50" height="82"/>

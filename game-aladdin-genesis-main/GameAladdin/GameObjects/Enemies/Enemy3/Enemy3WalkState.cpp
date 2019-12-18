@@ -38,7 +38,7 @@ void Enemy3WalkState::Update(float deltaTime)
 
 	if (_enemy->GetHealth() <= 50)
 	{
-		_enemy->SetState(new Enemy3Dead(_enemy));
+		// _enemy->SetState(new Enemy3Dead(_enemy));
 		return;
 	}
 }

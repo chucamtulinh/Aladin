@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animations>
+  <Animation name="Idle" imagePath="Skeleton_trans.png" width="868" height="351">
+    <sprite x="8" y="73" w="86" h="25" oX="8" oY="73" oW="220" oH="888" />
+    <sprite x="101" y="68" w="80" h="28" oX="101" oY="68" oW="220" oH="888" />
+    <sprite x="188" y="52" w="74" h="44" oX="188" oY="52" oW="220" oH="888" />
+    <sprite x="283" y="37" w="62" h="59" oX="283" oY="37" oW="220" oH="888" />
+    <sprite x="365" y="29" w="50" h="66" oX="365" oY="29" oW="220" oH="888" />
+    <sprite x="486" y="22" w="48" h="74" oX="486" oY="22" oW="220" oH="888" />
+    <sprite x="662" y="16" w="52" h="80" oX="662" oY="16" oW="220" oH="888" />
+    <sprite x="726" y="16" w="68" h="80" oX="726" oY="16" oW="220" oH="888" />
+    <sprite x="799" y="8" w="65" h="88" oX="799" oY="8" oW="220" oH="888" />
+    <sprite x="13" y="122" w="50" h="81" oX="13" oY="122" oW="220" oH="888" />
+    <sprite x="75" y="123" w="49" h="80" oX="75" oY="123" oW="220" oH="888" />
+    <sprite x="132" y="121" w="61" h="83" oX="132" oY="121" oW="220" oH="888" />
+    <sprite x="203" y="130" w="64" h="74" oX="203" oY="130" oW="220" oH="888" />
+    <sprite x="279" y="121" w="74" h="84" oX="279" oY="121" oW="220" oH="888" />
+    <sprite x="376" y="115" w="80" h="90" oX="376" oY="115" oW="220" oH="888" />
+    <sprite x="479" y="126" w="95" h="76" oX="479" oY="126" oW="220" oH="888" />
+    <sprite x="593" y="125" w="60" h="78" oX="593" oY="125" oW="220" oH="888" />
+    <sprite x="665" y="129" w="16" h="4" oX="665" oY="129" oW="220" oH="888" />
+    <sprite x="688" y="122" w="6" h="14" oX="688" oY="122" oW="220" oH="888" />
+    <sprite x="700" y="122" w="11" h="12" oX="700" oY="122" oW="220" oH="888" />
+    <sprite x="718" y="126" w="6" h="7" oX="718" oY="126" oW="220" oH="888" />
+  </Animation>
+  <Animation name="Attack" imagePath="Skeleton_trans.png" width="868" height="351">
+    <sprite x="665" y="129" w="16" h="4" oX="665" oY="129" oW="-581" oH="74" />
+    <sprite x="688" y="122" w="6" h="14" oX="688" oY="122" oW="-581" oH="74" />
+    <sprite x="700" y="122" w="11" h="12" oX="700" oY="122" oW="-581" oH="74" />
+    <sprite x="718" y="126" w="6" h="7" oX="718" oY="126" oW="-581" oH="74" />
+  </Animation>
+</Animations>
