@@ -1,16 +1,16 @@
 #pragma once
 
-#include "D:/New folder/Aladin/game-aladdin-genesis-main/GameAladdin/GameObjects/Enemies/Enemy.h"
+#include "../Enemy.h"
 
-class Bat : public Enemy
+class Enemy2 : public Enemy
 {
 private:
 	//used to check when injured
 	int _prevHealth;
 public:
-	Bat();
-	Bat(GameObject * player);
-	~Bat();
+	Enemy2();
+	Enemy2(GameObject * player);
+	~Enemy2();
 
 	void Update(float deltaTime);
 };

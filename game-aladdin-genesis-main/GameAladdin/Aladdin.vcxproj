@@ -155,9 +155,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Bat.cpp" />
-    <ClCompile Include="BatDamageState.cpp" />
     <ClCompile Include="BatFlyState.cpp" />
-    <ClCompile Include="BatIdleState.cpp" />
     <ClCompile Include="GameComponents\Animation.cpp" />
     <ClCompile Include="GameComponents\GameCollision.cpp" />
     <ClCompile Include="GameComponents\GameTime.cpp" />

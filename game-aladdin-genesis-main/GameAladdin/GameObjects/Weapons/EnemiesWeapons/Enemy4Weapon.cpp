@@ -9,7 +9,7 @@ Enemy4Weapon::Enemy4Weapon(int damage) : Weapon(Weapon::WeaponType::EnemiesWeapo
 	_width = _animation->GetWidth();
 	_height = _animation->GetHeight();
 
-	_velocity.x = 35;//left or right
+	_velocity.x = 20;//left or right
 	_velocity.y = -20;
 
 	_mass = 10;

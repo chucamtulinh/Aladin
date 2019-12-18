@@ -276,11 +276,9 @@
   <object id="379" gid="7" x="1586.5" y="980.167" width="44" height="58"/>
   <object id="386" gid="6" x="2175.33" y="815.667" width="44" height="58" visible="0"/>
  </objectgroup>
- <objectgroup id="21" name="Enemy_3">
-  <object id="416" x="231" y="1045.5" height="0.5"/>
- </objectgroup>
+ <objectgroup id="21" name="Enemy_3"/>
  <objectgroup id="22" name="Enemy_4_Left">
-  <object id="415" gid="15" x="146" y="1101" width="50" height="82"/>
+  <object id="415" gid="15" x="200.5" y="1101.5" width="50" height="82"/>
  </objectgroup>
  <objectgroup id="20" name="Skeleton">
   <object id="371" gid="15" x="571" y="916" width="50" height="82"/>

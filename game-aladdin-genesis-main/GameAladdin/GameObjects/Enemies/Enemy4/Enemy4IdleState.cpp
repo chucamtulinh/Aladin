@@ -12,7 +12,7 @@ Enemy4IdleState::Enemy4IdleState()
 
 Enemy4IdleState::Enemy4IdleState(Enemy * enemy) : EnemyState(enemy, EnemyState::StateName::Idle)
 {
-	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLEnemy4(), "Idle", ResourceManager::GetInstance()->GetTextureEnemies4(), true, 0.5f));
+	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLEnemy4(), "Idle", ResourceManager::GetInstance()->GetTextureEnemies4(), true, 0.7f));
 }
 
 
@@ -26,8 +26,7 @@ void Enemy4IdleState::Update(float deltaTime)
 
 	if (_animation->IsFinish())
 	{
-
-
+		_enemy->SetIsVisible(false);
 		Enemy4Weapon* weaponL = new Enemy4Weapon();
 		weaponL->SetPosition(_enemy->GetPosition().x, _enemy->GetPosition().y - _enemy->GetHeight() / 2);
 		
@@ -39,14 +38,11 @@ void Enemy4IdleState::Update(float deltaTime)
 		
 		//add appleWeapon to QuadTree
 		QuadTree::InsertDynamicObject(weaponL);
+		_enemy->SetIsVisible(false);
+		/*Enemy4Weapon2* weaponR = new Enemy4Weapon2();
+		weaponR->SetVelocity(_enemy->GetPosition() - _enemy->GetTarget()->GetPosition());
+		SceneManager::GetInstance()->GetCurrentScene()->AddGameObjectToWeaponList(weaponR);
+		QuadTree::InsertDynamicObject(weaponR);*/
 		
-		//_enemy->~Enemy();
-
-		//Enemy4Weapon* weaponR = weaponL;
-		//weaponR->SetVelocity(_enemy->GetPosition() - _enemy->GetTarget()->GetPosition());
-		//SceneManager::GetInstance()->GetCurrentScene()->AddGameObjectToWeaponList(weaponR);
-		//QuadTree::InsertDynamicObject(weaponR);
-		
-
 	}
 }

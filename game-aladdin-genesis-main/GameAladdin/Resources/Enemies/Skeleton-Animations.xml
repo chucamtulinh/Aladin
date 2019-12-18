@@ -19,9 +19,6 @@
     <sprite x="479" y="126" w="95" h="76" oX="479" oY="126" oW="220" oH="888" />
     <sprite x="593" y="125" w="60" h="78" oX="593" oY="125" oW="220" oH="888" />
     <sprite x="665" y="129" w="16" h="4" oX="665" oY="129" oW="220" oH="888" />
-    <sprite x="688" y="122" w="6" h="14" oX="688" oY="122" oW="220" oH="888" />
-    <sprite x="700" y="122" w="11" h="12" oX="700" oY="122" oW="220" oH="888" />
-    <sprite x="718" y="126" w="6" h="7" oX="718" oY="126" oW="220" oH="888" />
   </Animation>
   <Animation name="Attack" imagePath="Skeleton_trans.png" width="868" height="351">
     <sprite x="665" y="129" w="16" h="4" oX="665" oY="129" oW="-581" oH="74" />

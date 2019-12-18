@@ -635,6 +635,10 @@ void GameMap::Draw(Camera * camera)
 			continue;
 		}
 
+		if (!_listEnemies[i]) {
+			_listEnemies.erase(_listEnemies.begin() + i);
+			i--;
+		}
 		//visible -> draw
 		_listEnemies[i]->Draw(camera);
 	}

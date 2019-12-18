@@ -387,9 +387,6 @@
     <ClCompile Include="GameObjects\Enemies\Enemy6\Enemy6ThrowState.cpp">
       <Filter>GameObjects\Enemies\Enemy6</Filter>
     </ClCompile>
-    <ClCompile Include="GameObjects\Weapons\EnemiesWeapons\Enemy6Weapon.cpp">
-      <Filter>GameObjects\Weapons\EnemiesWeapons</Filter>
-    </ClCompile>
     <ClCompile Include="GameObjects\Weapons\PlayerWeapons\CamelWeapon.cpp">
       <Filter>GameObjects\Weapons\PlayerWeapons</Filter>
     </ClCompile>
@@ -441,16 +438,13 @@
     <ClCompile Include="Bat.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BatIdleState.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="BatDamageState.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="BatFlyState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GameObjects\Weapons\EnemiesWeapons\Enemy4Weapon.cpp">
+      <Filter>GameObjects\Weapons\EnemiesWeapons</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Weapons\EnemiesWeapons\Enemy6Weapon.cpp">
       <Filter>GameObjects\Weapons\EnemiesWeapons</Filter>
     </ClCompile>
   </ItemGroup>
@@ -761,9 +755,6 @@
     <ClInclude Include="GameObjects\Enemies\Enemy6\Enemy6ThrowState.h">
       <Filter>GameObjects\Enemies\Enemy6</Filter>
     </ClInclude>
-    <ClInclude Include="GameObjects\Weapons\EnemiesWeapons\Enemy6Weapon.h">
-      <Filter>GameObjects\Weapons\EnemiesWeapons</Filter>
-    </ClInclude>
     <ClInclude Include="GameObjects\Weapons\PlayerWeapons\CamelWeapon.h">
       <Filter>GameObjects\Weapons\PlayerWeapons</Filter>
     </ClInclude>
@@ -828,6 +819,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GameObjects\Weapons\EnemiesWeapons\Enemy4Weapon.h">
+      <Filter>GameObjects\Weapons\EnemiesWeapons</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Weapons\EnemiesWeapons\Enemy6Weapon.h">
       <Filter>GameObjects\Weapons\EnemiesWeapons</Filter>
     </ClInclude>
   </ItemGroup>
