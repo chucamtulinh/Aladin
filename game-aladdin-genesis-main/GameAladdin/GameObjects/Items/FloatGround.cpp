@@ -5,10 +5,10 @@
 FloatGround::FloatGround() : GameObject(GameObject::GameObjectType::FloatGround, true)
 {
 	RECT floatGroundSourceRect;
-	floatGroundSourceRect.left = 155;
-	floatGroundSourceRect.right = 195; //+40
-	floatGroundSourceRect.top = 3;
-	floatGroundSourceRect.bottom = 27; //+24
+	floatGroundSourceRect.left = 454;
+	floatGroundSourceRect.right = 487;
+	floatGroundSourceRect.top = 144;
+	floatGroundSourceRect.bottom = 158;
 	_floatGroundSprite = new Sprite(ResourceManager::GetInstance()->GetTextureItems(), true, floatGroundSourceRect);
 	_width = _floatGroundSprite->GetWidth();
 	_height = _floatGroundSprite->GetHeight();

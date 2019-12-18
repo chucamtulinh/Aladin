@@ -92,8 +92,8 @@ void GameObject::CheckCollision()
 		GameCollision collisionData = GameCollision::SweptAABB(this->GetBound(), gameObject->GetBound(), this->_acceleration.x, this->_acceleration.y);
 		if (collisionData.IsCollided())
 		{
-			if (gameObject->_tag != GameObjectType::Weapons)
-				this->OnCollision(gameObject, collisionData.GetSide());
+			this->OnCollision(gameObject, collisionData.GetSide());
+
 			//goi va cham cho player voi weapon
 			if (this->_tag == GameObjectType::Weapons && gameObject->_tag == GameObjectType::Players)
 				gameObject->OnCollision(this, collisionData.GetSide());

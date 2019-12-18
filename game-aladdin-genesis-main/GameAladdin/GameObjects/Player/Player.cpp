@@ -359,7 +359,6 @@ void Player::OnCollision(GameObject * target, GameCollision::SideCollisions side
 		{
 			_numAppleWeapon++;
 			target->SetIsDisappear(true);
-			target->OnCollision(this, side);
 
 			Sound::GetInstance()->Play("Apple_Collect", false, 1);
 		}
@@ -371,7 +370,6 @@ void Player::OnCollision(GameObject * target, GameCollision::SideCollisions side
 		{
 			_numRubby++;
 			target->SetIsDisappear(true);
-			target->OnCollision(this, side);
 
 			Sound::GetInstance()->Play("Apple_Collect", false, 1);
 		}
@@ -385,7 +383,7 @@ void Player::OnCollision(GameObject * target, GameCollision::SideCollisions side
 			&& !enemy->GetState()->IsAttackedPlayer())
 		{
 			SetHealth(_health - enemy->GetDamage());
-			enemy->GetState()->SetIsAttackedPlayer(false);
+			enemy->GetState()->SetIsAttackedPlayer(true);
 		}
 	}
 
