@@ -2,6 +2,16 @@
 #include "Camera.h"
 #include "../GameComponents/SceneManager.h"
 
+void GameObject::SetId(int id)
+{
+	_id = id;
+}
+
+int GameObject::GetId()
+{
+	return _id;
+}
+
 GameObject::GameObject(GameObjectType tag, bool isMovableObject)
 {
 	_tag = tag;
@@ -15,6 +25,7 @@ GameObject::GameObject(GameObjectType tag, bool isMovableObject)
 	_acceleration = D3DXVECTOR2(0, _mass);
 
 	_isVisible = true;
+	_isCollidable = true;
 	_allowUpdateWhenNotInCamera = false;
 
 	_input = Input::GetInstance();
@@ -46,10 +57,10 @@ void GameObject::Update(float deltaTime)
 	_deltaTime = deltaTime;
 
 	//delta(v)=a*delta(t)
-	_velocity += _acceleration*deltaTime;
+	_velocity += _acceleration * deltaTime;
 
 	//s=v*delta(t)
-	_position += _velocity*deltaTime;
+	_position += _velocity * deltaTime;
 
 	//collision
 	bool isCheckCollision = true;
@@ -76,7 +87,8 @@ void GameObject::Update(float deltaTime)
 void GameObject::CheckCollision()
 {
 	std::vector<GameObject*> listCanCollide;
-	SceneManager::GetInstance()->GetCurrentScene()->GetQuadTree()->Retrieve(listCanCollide, this);
+	Camera * camera = SceneManager::GetInstance()->GetCurrentScene()->GetCamera();
+	SceneManager::GetInstance()->GetCurrentScene()->GetGrid()->GetListObject(listCanCollide, camera);
 	for (size_t i = 0; i < listCanCollide.size(); i++)
 	{
 		GameObject *gameObject = listCanCollide.at(i);
@@ -92,8 +104,8 @@ void GameObject::CheckCollision()
 		GameCollision collisionData = GameCollision::SweptAABB(this->GetBound(), gameObject->GetBound(), this->_acceleration.x, this->_acceleration.y);
 		if (collisionData.IsCollided())
 		{
-			this->OnCollision(gameObject, collisionData.GetSide());
-
+			if (gameObject->_tag != GameObjectType::Weapons)
+				this->OnCollision(gameObject, collisionData.GetSide());
 			//goi va cham cho player voi weapon
 			if (this->_tag == GameObjectType::Weapons && gameObject->_tag == GameObjectType::Players)
 				gameObject->OnCollision(this, collisionData.GetSide());
@@ -114,6 +126,16 @@ bool GameObject::IsVisible()
 void GameObject::SetIsVisible(bool value)
 {
 	_isVisible = value;
+}
+
+bool GameObject::IsCollidable()
+{
+	return _isCollidable;
+}
+
+void GameObject::SetIsCollidable(bool value)
+{
+	_isCollidable = value;
 }
 
 bool GameObject::IsMovableObject()

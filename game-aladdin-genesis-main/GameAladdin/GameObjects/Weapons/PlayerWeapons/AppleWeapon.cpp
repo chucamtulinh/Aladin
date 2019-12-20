@@ -36,6 +36,7 @@ void AppleWeapon::Update(float deltaTime)
 
 void AppleWeapon::OnCollision(GameObject * target, GameCollision::SideCollisions side)
 {
+	if (target->GetTag() == GameObjectType::FloatGround) return;
 	//prevent collision with EnemiesWeapons
 	if (target->GetTag() == GameObjectType::Weapons)
 	{

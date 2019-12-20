@@ -128,7 +128,8 @@ void Enemy::Draw(Camera * camera)
 void Enemy::CheckCollision()
 {
 	std::vector<GameObject*> listCanCollide;
-	SceneManager::GetInstance()->GetCurrentScene()->GetQuadTree()->Retrieve(listCanCollide, this);
+	Camera * camera = SceneManager::GetInstance()->GetCurrentScene()->GetCamera();
+	SceneManager::GetInstance()->GetCurrentScene()->GetGrid()->GetListObject(listCanCollide, camera);
 
 	bool allowPlayerMoveLeft = true;
 	bool allowPlayerMoveRight = true;

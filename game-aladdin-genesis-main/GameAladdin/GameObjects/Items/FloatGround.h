@@ -1,23 +1,25 @@
 #pragma once
 
 #include "../GameObject.h"
+#include "../Player/Player.h"
+#include "../Player/PlayerFallState.h"
 #include "../../GameComponents/Sprite.h"
+#include "../../GameComponents/Animation.h"
 
 class FloatGround : public GameObject
 {
 private:
-	Sprite *_floatGroundSprite;
-	D3DXVECTOR2 _firstPosition;
+	Sprite * _appleSprite;
+	Animation *_animationSprite;
+	Animation *_animationRubby;
 public:
-	FloatGround();
+	Animation * _animation;
+	FloatGround(int type);
 	~FloatGround();
 
 	void Draw(Camera* camera);
+	void Update(float dt);
 
-	void OnCollision(GameObject *target, GameCollision::SideCollisions side);
-
-	void SetPosition(D3DXVECTOR2 position);
-	void SetPosition(D3DXVECTOR3 position);
-	void SetPosition(float x, float y);
+	void OnCollision(Player *target, GameCollision::SideCollisions side);
 };
 

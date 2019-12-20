@@ -58,7 +58,7 @@ void JafarAttack::Update(float deltatime)
 
 		SceneManager::GetInstance()->GetCurrentScene()->AddGameObjectToWeaponList(weapon);
 
-		QuadTree::InsertDynamicObject(weapon);
+		Grid::InsertDynamicObject(weapon);
 
 
 	}

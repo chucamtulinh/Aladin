@@ -3,7 +3,7 @@
 GameMap::GameMap()
 {}
 
-GameMap::GameMap(char * filePath, QuadTree* &quadTree)
+GameMap::GameMap(char * filePath, Grid* &grid)
 {
 	_objectCenter = NULL;
 
@@ -15,8 +15,8 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 	r.top = 0;
 	r.right = this->GetWidth();
 	r.bottom = this->GetHeight();
-	quadTree = new QuadTree(r, 1);
-	_quadTree = quadTree;
+	grid = new Grid();
+	_grid = grid;
 
 	/* don't use tileset for this game
 	for (size_t i = 0; i < _map->GetNumTilesets(); i++)
@@ -43,44 +43,61 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 			if (objectGroup->GetName() == "Player")
 			{
 				_player = new Player();
+				_player->SetId(object->GetId());
 				D3DXVECTOR2 pos = D3DXVECTOR2(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
 				_player->SetPosition(pos);
 				_player->SetAppearPosition(pos);
 
-				QuadTree::InsertDynamicObject(_player);
+				Grid::InsertDynamicObject(_player);
 			}
 
 			//init apple
 			if (objectGroup->GetName() == "Apple")
 			{
 				Apple *apple = new Apple();
+				apple->SetId(object->GetId());
 				apple->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
 
 				_listApples.push_back(apple);
 
-				_quadTree->InsertStaticObject(apple);
+				_grid->InsertStaticObject(apple);
 			}
 
 			//init apple
 			if (objectGroup->GetName() == "Rubby")
 			{
 				Rubby *rubby = new Rubby();
+				rubby->SetId(object->GetId());
 				rubby->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
 
 				_listRubbies.push_back(rubby);
 
-				_quadTree->InsertStaticObject(rubby);
+				_grid->InsertStaticObject(rubby);
 			}
 
 			//init float ground
 			if (objectGroup->GetName() == "FloatGround")
 			{
-				FloatGround *floatGround = new FloatGround();
+				FloatGround *floatGround = new FloatGround(0);
+				floatGround->SetId(object->GetId());
+				floatGround->SetId(object->GetId());
 				floatGround->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
 
 				_listFloatGrounds.push_back(floatGround);
 
-				_quadTree->InsertStaticObject(floatGround);
+				_grid->InsertStaticObject(floatGround);
+			}
+
+			if (objectGroup->GetName() == "FloatGround_1")
+			{
+				FloatGround *floatGround = new FloatGround(1);
+				floatGround->SetId(object->GetId());
+				floatGround->SetId(object->GetId());
+				floatGround->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
+
+				_listFloatGrounds.push_back(floatGround);
+
+				_grid->InsertStaticObject(floatGround);
 			}
 
 			//init Springboard
@@ -91,7 +108,7 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 
 				_listSpringboards.push_back(springboard);
 
-				_quadTree->InsertStaticObject(springboard);
+				_grid->InsertStaticObject(springboard);
 			}
 
 			//init Enemies
@@ -102,250 +119,273 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 
 				_listEnemies.push_back(enemy);
 
-				QuadTree::InsertDynamicObject(enemy);
+				Grid::InsertDynamicObject(enemy);
 			}*/
 			
 			if (objectGroup->GetName() == "Enemy_1")
 			{
 				Enemy *enemy = new Enemy1(_player);
+				enemy->SetId(object->GetId());
 				enemy->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
 
 				_listEnemies.push_back(enemy);
 
-				QuadTree::InsertDynamicObject(enemy);
+				Grid::InsertDynamicObject(enemy);
 			}
 			if (objectGroup->GetName() == "Enemy_2")
 			{
 				Enemy *enemy = new Enemy2(_player);
+				enemy->SetId(object->GetId());
 				enemy->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
 
 				_listEnemies.push_back(enemy);
 
-				QuadTree::InsertDynamicObject(enemy);
+				Grid::InsertDynamicObject(enemy);
 			}
 			if (objectGroup->GetName() == "Enemy_3")
 			{
 				Enemy *enemy = new Enemy3(_player);
+				enemy->SetId(object->GetId());
 				enemy->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
 
 				_listEnemies.push_back(enemy);
 
-				QuadTree::InsertDynamicObject(enemy);
+				Grid::InsertDynamicObject(enemy);
 			}
 			if (objectGroup->GetName() == "Enemy_4_Left")
 			{
 				Enemy *enemy = new Enemy4(_player);
+				enemy->SetId(object->GetId());
 				enemy->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
 
 				_listEnemies.push_back(enemy);
 
-				QuadTree::InsertDynamicObject(enemy);
+				Grid::InsertDynamicObject(enemy);
 			}
 			if (objectGroup->GetName() == "Enemy_4_Right")
 			{
 				Enemy *enemy = new Enemy4(_player);
+				enemy->SetId(object->GetId());
 				enemy->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
 				enemy->SetIsRight(true);
 
 				_listEnemies.push_back(enemy);
 
-				QuadTree::InsertDynamicObject(enemy);
+				Grid::InsertDynamicObject(enemy);
 			}
 			if (objectGroup->GetName() == "Enemy_5")
 			{
 				Enemy *enemy = new Enemy5(_player);
+				enemy->SetId(object->GetId());
 				enemy->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
 
 				_listEnemies.push_back(enemy);
 
-				QuadTree::InsertDynamicObject(enemy);
+				Grid::InsertDynamicObject(enemy);
 			}
 			if (objectGroup->GetName() == "Enemy_6")
 			{
 				Enemy *enemy = new Enemy6(_player);
+				enemy->SetId(object->GetId());
 				enemy->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
 				enemy->SetIsRight(true);
 
 				_listEnemies.push_back(enemy);
 
-				_quadTree->InsertStaticObject(enemy);
+				_grid->InsertStaticObject(enemy);
 			}
 
 			//score object
 			if (objectGroup->GetName() == "ScoreObject1")
 			{
 				ScoreObject1 *obj = new ScoreObject1();
+				obj->SetId(object->GetId());
 				obj->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
 
 				_listScoreObject.push_back(obj);
 
-				_quadTree->InsertStaticObject(obj);
+				_grid->InsertStaticObject(obj);
 			}
 			if (objectGroup->GetName() == "ScoreObject2")
 			{
 				ScoreObject2 *obj = new ScoreObject2();
+				obj->SetId(object->GetId());
 				obj->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
 
 				_listScoreObject.push_back(obj);
 
-				_quadTree->InsertStaticObject(obj);
+				_grid->InsertStaticObject(obj);
 			}
 
 			//init BossJafar
 			if (objectGroup->GetName() == "Jafar")
 			{
 				Jafar* jaFar = new Jafar(_player);
+				jaFar->SetId(object->GetId());
 				jaFar->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
 
 				_listEnemies.push_back(jaFar);
 
-				_quadTree->InsertStaticObject(jaFar);
+				_grid->InsertStaticObject(jaFar);
 			}
 
 			//camel
 			if (objectGroup->GetName() == "Camel")
 			{
 				Camel *camel = new Camel();
+				camel->SetId(object->GetId());
 				camel->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
 
 				_listCamels.push_back(camel);
 
-				_quadTree->InsertStaticObject(camel);
+				_grid->InsertStaticObject(camel);
 			}
 
 			//bottle
 			if (objectGroup->GetName() == "Bottle")
 			{
 				Bottle *bottle = new Bottle();
+				bottle->SetId(object->GetId());
 				bottle->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
 
 				_listBottles.push_back(bottle);
 
-				_quadTree->InsertStaticObject(bottle);
+				_grid->InsertStaticObject(bottle);
 			}
 
 			//init coal
 			if (objectGroup->GetName() == "Coal")
 			{
 				Coal *coal = new Coal();
+				coal->SetId(object->GetId());
 				coal->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() + object->GetHeight() / 2);
 				coal->SetWidth(object->GetWidth());
 				coal->SetHeight(object->GetHeight());
 
 				_listCoal.push_back(coal);
 
-				_quadTree->InsertStaticObject(coal);
+				_grid->InsertStaticObject(coal);
 			}
 
 			//init ground
 			if (objectGroup->GetName() == "Ground")
 			{
 				GameObject *gameObject = new GameObject(GameObject::GameObjectType::Ground);
+				gameObject->SetId(object->GetId());
 				gameObject->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() + object->GetHeight() / 2);
 				gameObject->SetWidth(object->GetWidth());
 				gameObject->SetHeight(object->GetHeight());
 
-				_quadTree->InsertStaticObject(gameObject);
+				_grid->InsertStaticObject(gameObject);
 			}
 
 			//init wall
 			if (objectGroup->GetName() == "Wall")
 			{
 				GameObject *gameObject = new GameObject(GameObject::GameObjectType::Wall);
+				gameObject->SetId(object->GetId());
 				gameObject->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() + object->GetHeight() / 2);
 				gameObject->SetWidth(object->GetWidth());
 				gameObject->SetHeight(object->GetHeight());
 
-				_quadTree->InsertStaticObject(gameObject);
+				_grid->InsertStaticObject(gameObject);
 			}
 
 			//init Stairs
 			if (objectGroup->GetName() == "Stairs")
 			{
 				GameObject *gameObject = new GameObject(GameObject::GameObjectType::Stairs);
+				gameObject->SetId(object->GetId());
 				gameObject->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() + object->GetHeight() / 2);
 				gameObject->SetWidth(object->GetWidth());
 				gameObject->SetHeight(object->GetHeight());
 
-				_quadTree->InsertStaticObject(gameObject);
+				_grid->InsertStaticObject(gameObject);
 			}
 
 			//init WallPush
 			if (objectGroup->GetName() == "WallPush")
 			{
 				GameObject *gameObject = new GameObject(GameObject::GameObjectType::WallPush);
+				gameObject->SetId(object->GetId());
 				gameObject->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() + object->GetHeight() / 2);
 				gameObject->SetWidth(object->GetWidth());
 				gameObject->SetHeight(object->GetHeight());
 
-				_quadTree->InsertStaticObject(gameObject);
+				_grid->InsertStaticObject(gameObject);
 			}
 
 			//init StairsEndTop
 			if (objectGroup->GetName() == "StairsEndTop")
 			{
 				GameObject *gameObject = new GameObject(GameObject::GameObjectType::StairsEndTop);
+				gameObject->SetId(object->GetId());
 				gameObject->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() + object->GetHeight() / 2);
 				gameObject->SetWidth(object->GetWidth());
 				gameObject->SetHeight(object->GetHeight());
 
-				_quadTree->InsertStaticObject(gameObject);
+				_grid->InsertStaticObject(gameObject);
 			}
 
 			//init StairsEndBellow
 			if (objectGroup->GetName() == "StairsEndBellow")
 			{
 				GameObject *gameObject = new GameObject(GameObject::GameObjectType::StairsEndBellow);
+				gameObject->SetId(object->GetId());
 				gameObject->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() + object->GetHeight() / 2);
 				gameObject->SetWidth(object->GetWidth());
 				gameObject->SetHeight(object->GetHeight());
 
-				_quadTree->InsertStaticObject(gameObject);
+				_grid->InsertStaticObject(gameObject);
 			}
 
 			//init AllowStairsBellow
 			if (objectGroup->GetName() == "AllowStairsBellow")
 			{
 				GameObject *gameObject = new GameObject(GameObject::GameObjectType::AllowStairsBellow);
+				gameObject->SetId(object->GetId());
 				gameObject->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() + object->GetHeight() / 2);
 				gameObject->SetWidth(object->GetWidth());
 				gameObject->SetHeight(object->GetHeight());
 
-				_quadTree->InsertStaticObject(gameObject);
+				_grid->InsertStaticObject(gameObject);
 			}
 
 			//init AllowStairsTop
 			if (objectGroup->GetName() == "AllowStairsTop")
 			{
 				GameObject *gameObject = new GameObject(GameObject::GameObjectType::AllowStairsTop);
+				gameObject->SetId(object->GetId());
 				gameObject->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() + object->GetHeight() / 2);
 				gameObject->SetWidth(object->GetWidth());
 				gameObject->SetHeight(object->GetHeight());
 
-				_quadTree->InsertStaticObject(gameObject);
+				_grid->InsertStaticObject(gameObject);
 			}
 
 			//init wall
 			if (objectGroup->GetName() == "ToJafarScene")
 			{
 				GameObject *gameObject = new GameObject(GameObject::GameObjectType::ToJafarScene);
+				gameObject->SetId(object->GetId());
 				gameObject->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() + object->GetHeight() / 2);
 				gameObject->SetWidth(object->GetWidth());
 				gameObject->SetHeight(object->GetHeight());
 
-				_quadTree->InsertStaticObject(gameObject);
+				_grid->InsertStaticObject(gameObject);
 			}
 
 			//init ObjectCenter
 			if (objectGroup->GetName() == "ObjectCenter")
 			{
 				GameObject *gameObject = new GameObject(GameObject::GameObjectType::ObjectCenter);
+				gameObject->SetId(object->GetId());
 				gameObject->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() + object->GetHeight() / 2);
 				gameObject->SetHeight(object->GetHeight());
 
 				_objectCenter = gameObject;
 
-				_quadTree->InsertStaticObject(gameObject);
+				_grid->InsertStaticObject(gameObject);
 
 			}
 
@@ -353,22 +393,24 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 			if (objectGroup->GetName() == "Rope")
 			{
 				GameObject *gameObject = new GameObject(GameObject::GameObjectType::Rope);
+				gameObject->SetId(object->GetId());
 				gameObject->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() + object->GetHeight() / 2);
 				gameObject->SetWidth(object->GetWidth());
 				gameObject->SetHeight(object->GetHeight());
 
-				_quadTree->InsertStaticObject(gameObject);
+				_grid->InsertStaticObject(gameObject);
 			}
 
 			//init HorizontalBar
 			if (objectGroup->GetName() == "HorizontalBar")
 			{
 				GameObject *gameObject = new GameObject(GameObject::GameObjectType::HorizontalBar);
+				gameObject->SetId(object->GetId());
 				gameObject->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() + object->GetHeight() / 2);
 				gameObject->SetWidth(object->GetWidth());
 				gameObject->SetHeight(object->GetHeight());
 
-				_quadTree->InsertStaticObject(gameObject);
+				_grid->InsertStaticObject(gameObject);
 			}
 		}
 	}
@@ -382,9 +424,9 @@ GameMap::~GameMap()
 	delete _player;
 	_player = 0;
 
-	_quadTree->Clear();
-	delete _quadTree;
-	_quadTree = 0;
+	_grid->~Grid();
+	delete _grid;
+	_grid = 0;
 
 	for (size_t i = 0; i < _listApples.size(); i++)
 	{
@@ -564,7 +606,7 @@ void GameMap::Draw(Camera * camera)
 		//remove not visible object
 		if (!_listApples[i]->IsVisible())
 		{
-			_quadTree->RemoveStaticObject(_listApples[i]);
+			_grid->RemoveStaticObject(_listApples[i]);
 			_listApples.erase(_listApples.begin() + i);
 			i--;
 			continue;
@@ -580,7 +622,7 @@ void GameMap::Draw(Camera * camera)
 		//remove not visible object
 		if (!_listRubbies[i]->IsVisible())
 		{
-			_quadTree->RemoveStaticObject(_listRubbies[i]);
+			_grid->RemoveStaticObject(_listRubbies[i]);
 			_listRubbies.erase(_listRubbies.begin() + i);
 			i--;
 			continue;
@@ -596,7 +638,7 @@ void GameMap::Draw(Camera * camera)
 		//remove not visible object
 		if (!_listFloatGrounds[i]->IsVisible())
 		{
-			_quadTree->RemoveStaticObject(_listFloatGrounds[i]);
+			_grid->RemoveStaticObject(_listFloatGrounds[i]);
 			_listFloatGrounds.erase(_listFloatGrounds.begin() + i);
 			i--;
 			continue;
@@ -613,7 +655,7 @@ void GameMap::Draw(Camera * camera)
 	//remove not visible object
 		if (!_listSpringboards[i]->IsVisible())
 		{
-			_quadTree->RemoveStaticObject(_listSpringboards[i]);
+			_grid->RemoveStaticObject(_listSpringboards[i]);
 			_listSpringboards.erase(_listSpringboards.begin() + i);
 			i--;
 			continue;
@@ -629,7 +671,7 @@ void GameMap::Draw(Camera * camera)
 		//remove not visible object
 		if (!_listEnemies[i]->IsVisible())
 		{
-			QuadTree::RemoveDynamicObject(_listEnemies[i]);
+			Grid::RemoveDynamicObject(_listEnemies[i]);
 			_listEnemies.erase(_listEnemies.begin() + i);
 			i--;
 			continue;
@@ -649,7 +691,7 @@ void GameMap::Draw(Camera * camera)
 		//remove not visible object
 		if (!_listScoreObject[i]->IsVisible())
 		{
-			QuadTree::RemoveDynamicObject(_listScoreObject[i]);
+			Grid::RemoveDynamicObject(_listScoreObject[i]);
 			_listScoreObject.erase(_listScoreObject.begin() + i);
 			i--;
 			continue;
@@ -665,7 +707,7 @@ void GameMap::Draw(Camera * camera)
 		//remove not visible object
 		if (!_listCamels[i]->IsVisible())
 		{
-			_quadTree->RemoveStaticObject(_listCamels[i]);
+			_grid->RemoveStaticObject(_listCamels[i]);
 			_listCamels.erase(_listCamels.begin() + i);
 			i--;
 			continue;
@@ -681,7 +723,7 @@ void GameMap::Draw(Camera * camera)
 		//remove not visible object
 		if (!_listBottles[i]->IsVisible())
 		{
-			_quadTree->RemoveStaticObject(_listBottles[i]);
+			_grid->RemoveStaticObject(_listBottles[i]);
 			_listBottles.erase(_listBottles.begin() + i);
 			i--;
 			continue;
@@ -697,7 +739,7 @@ void GameMap::Draw(Camera * camera)
 		//remove not visible object
 		if (!_listCoal[i]->IsVisible())
 		{
-			_quadTree->RemoveStaticObject(_listCoal[i]);
+			_grid->RemoveStaticObject(_listCoal[i]);
 			_listCoal.erase(_listCoal.begin() + i);
 			i--;
 			continue;

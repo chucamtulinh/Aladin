@@ -90,9 +90,6 @@
     <ClCompile Include="GameComponents\Input.cpp">
       <Filter>GameComponents</Filter>
     </ClCompile>
-    <ClCompile Include="GameComponents\QuadTree.cpp">
-      <Filter>GameComponents</Filter>
-    </ClCompile>
     <ClCompile Include="GameComponents\Scene.cpp">
       <Filter>GameComponents</Filter>
     </ClCompile>
@@ -447,6 +444,9 @@
     <ClCompile Include="GameObjects\Weapons\EnemiesWeapons\Enemy6Weapon.cpp">
       <Filter>GameObjects\Weapons\EnemiesWeapons</Filter>
     </ClCompile>
+    <ClCompile Include="GameComponents\Grid.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameComponents\Animation.h">
@@ -456,9 +456,6 @@
       <Filter>GameComponents</Filter>
     </ClInclude>
     <ClInclude Include="GameComponents\Input.h">
-      <Filter>GameComponents</Filter>
-    </ClInclude>
-    <ClInclude Include="GameComponents\QuadTree.h">
       <Filter>GameComponents</Filter>
     </ClInclude>
     <ClInclude Include="GameComponents\Scene.h">
@@ -823,6 +820,9 @@
     </ClInclude>
     <ClInclude Include="GameObjects\Weapons\EnemiesWeapons\Enemy6Weapon.h">
       <Filter>GameObjects\Weapons\EnemiesWeapons</Filter>
+    </ClInclude>
+    <ClInclude Include="GameComponents\Grid.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Sprite.h"
-#include "QuadTree.h"
+#include "Grid.h"
 #include "../TmxParser/Tmx.h.in"
 #include "../GameObjects/Camera.h"
 #include "../GameObjects/Items/Apple.h"
@@ -29,7 +29,7 @@ private:
 	//don't use tileset for this game
 	//std::map<int, Sprite*> _listTileSet;
 	Tmx::Map *_map;
-	QuadTree* _quadTree;
+	Grid* _grid;
 
 	Player* _player;
 
@@ -47,7 +47,7 @@ private:
 public:
 	GameMap();
 	//use QuadTree* &quadTree because quadTree is init in this function
-	GameMap(char* filePath, QuadTree* &quadTree);
+	GameMap(char* filePath, Grid* &grid);
 	~GameMap();
 
 	void Update(float deltaTime);

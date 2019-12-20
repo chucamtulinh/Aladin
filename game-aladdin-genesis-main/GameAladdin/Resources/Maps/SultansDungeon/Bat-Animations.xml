@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animations>
+  <Animation name="Fly" imagePath="Bat.png" width="344" height="171">
+    <sprite x="10" y="60" w="23" h="14" oX="10" oY="60" oW="75" oH="173" />
+    <sprite x="39" y="52" w="12" h="22" oX="39" oY="52" oW="75" oH="173" />
+    <sprite x="56" y="58" w="29" h="16" oX="56" oY="58" oW="75" oH="173" />
+    <sprite x="89" y="67" w="32" h="15" oX="89" oY="67" oW="75" oH="173" />
+    <sprite x="128" y="67" w="8" h="24" oX="128" oY="67" oW="75" oH="173" />
+    <sprite x="143" y="67" w="20" h="15" oX="143" oY="67" oW="75" oH="173" />
+    <sprite x="165" y="61" w="33" h="13" oX="165" oY="61" oW="75" oH="173" />
+  </Animation>
+  <Animation name="Idle" imagePath="Bat.png" width="344" height="171">
+    <sprite x="9" y="18" w="7" h="15" oX="9" oY="18" oW="-41" oH="76" />
+    <sprite x="20" y="10" w="20" h="21" oX="20" oY="10" oW="-41" oH="76" />
+    <sprite x="48" y="13" w="19" h="22" oX="48" oY="13" oW="-41" oH="76" />
+    <sprite x="76" y="18" w="21" h="13" oX="76" oY="18" oW="-41" oH="76" />
+  </Animation>
+  <Animation name="Damage" imagePath="Bat.png" width="344" height="171">
+    <sprite x="10" y="119" w="13" h="12" oX="10" oY="119" oW="121" oH="301" />
+    <sprite x="38" y="111" w="50" h="27" oX="38" oY="111" oW="121" oH="301" />
+    <sprite x="93" y="113" w="22" h="22" oX="93" oY="113" oW="121" oH="301" />
+    <sprite x="128" y="101" w="21" h="52" oX="128" oY="101" oW="121" oH="301" />
+    <sprite x="160" y="106" w="28" h="48" oX="160" oY="106" oW="121" oH="301" />
+    <sprite x="199" y="106" w="29" h="52" oX="199" oY="106" oW="121" oH="301" />
+    <sprite x="233" y="110" w="30" h="43" oX="233" oY="110" oW="121" oH="301" />
+    <sprite x="275" y="106" w="22" h="50" oX="275" oY="106" oW="121" oH="301" />
+  </Animation>
+</Animations>

@@ -37,12 +37,12 @@ void Enemy4IdleState::Update(float deltaTime)
 		SceneManager::GetInstance()->GetCurrentScene()->AddGameObjectToWeaponList(weaponL);
 		
 		//add appleWeapon to QuadTree
-		QuadTree::InsertDynamicObject(weaponL);
+		Grid::InsertDynamicObject(weaponL);
 		_enemy->SetIsVisible(false);
 		/*Enemy4Weapon2* weaponR = new Enemy4Weapon2();
 		weaponR->SetVelocity(_enemy->GetPosition() - _enemy->GetTarget()->GetPosition());
 		SceneManager::GetInstance()->GetCurrentScene()->AddGameObjectToWeaponList(weaponR);
-		QuadTree::InsertDynamicObject(weaponR);*/
+		Grid::InsertDynamicObject(weaponR);*/
 		
 	}
 }

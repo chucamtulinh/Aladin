@@ -160,8 +160,8 @@
     <ClCompile Include="GameComponents\GameCollision.cpp" />
     <ClCompile Include="GameComponents\GameTime.cpp" />
     <ClCompile Include="GameComponents\Graphics.cpp" />
+    <ClCompile Include="GameComponents\Grid.cpp" />
     <ClCompile Include="GameComponents\Input.cpp" />
-    <ClCompile Include="GameComponents\QuadTree.cpp" />
     <ClCompile Include="GameComponents\ResourceManager.cpp" />
     <ClCompile Include="GameComponents\Scene.cpp" />
     <ClCompile Include="GameComponents\SceneManager.cpp" />
@@ -287,8 +287,8 @@
     <ClInclude Include="GameComponents\GameCollision.h" />
     <ClInclude Include="GameComponents\GameTime.h" />
     <ClInclude Include="GameComponents\Graphics.h" />
+    <ClInclude Include="GameComponents\Grid.h" />
     <ClInclude Include="GameComponents\Input.h" />
-    <ClInclude Include="GameComponents\QuadTree.h" />
     <ClInclude Include="GameComponents\ResourceManager.h" />
     <ClInclude Include="GameComponents\Scene.h" />
     <ClInclude Include="GameComponents\SceneManager.h" />

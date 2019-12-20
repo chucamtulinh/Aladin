@@ -122,7 +122,8 @@ void Player::Draw(Camera * camera)
 void Player::CheckCollision()
 {
 	std::vector<GameObject*> listCanCollide;
-	SceneManager::GetInstance()->GetCurrentScene()->GetQuadTree()->Retrieve(listCanCollide, this);
+	Camera * camera = SceneManager::GetInstance()->GetCurrentScene()->GetCamera();
+	SceneManager::GetInstance()->GetCurrentScene()->GetGrid()->GetListObject(listCanCollide, camera);
 
 	bool playerGround = false;
 	bool allowPlayerMoveLeft = true;
@@ -157,6 +158,7 @@ void Player::CheckCollision()
 					// -> không sử dụng được
 					//this->_position.y -= (10 * _deltaTime);
 				}
+				if (!gameObject->IsCollidable()) playerGround = false;
 			}
 
 			/////////////////////////////////////////

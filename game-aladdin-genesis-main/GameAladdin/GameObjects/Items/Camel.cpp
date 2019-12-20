@@ -51,7 +51,7 @@ void Camel::Update(float deltaTime)
 		SceneManager::GetInstance()->GetCurrentScene()->AddGameObjectToWeaponList(weapon);
 
 		//add appleWeapon to QuadTree
-		QuadTree::InsertDynamicObject(weapon);
+		Grid::InsertDynamicObject(weapon);
 	}
 
 	//reset _isCreatedWeapon

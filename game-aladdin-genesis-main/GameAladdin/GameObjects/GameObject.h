@@ -47,7 +47,7 @@ protected:
 	float _mass;//khoi luong
 	int _width, _height;
 
-	bool _isVisible;
+	bool _isVisible, _isCollidable;
 	bool _isInCamera, _allowUpdateWhenNotInCamera;
 
 	//use to CheckCollision. No check between NonMovableObject & NonMovableObject
@@ -61,6 +61,9 @@ protected:
 
 	bool _isDisappear;
 public:
+	int _id;
+	void SetId(int id);
+	int GetId();
 	GameObject(GameObjectType tag = None, bool isMovableObject = true);
 	virtual ~GameObject();
 
@@ -74,6 +77,9 @@ public:
 
 	bool IsVisible();
 	void SetIsVisible(bool value);
+
+	bool IsCollidable();
+	void SetIsCollidable(bool value);
 
 	bool IsMovableObject();
 

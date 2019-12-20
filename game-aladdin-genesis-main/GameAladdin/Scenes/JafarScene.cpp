@@ -57,7 +57,7 @@ void JafarScene::LoadContent()
 	sprite->SetPosition(sprite->GetWidth() / 2.0f, sprite->GetHeight() / 2.0f);
 	_backgroundTextures.push_back(sprite);
 
-	_gameMap = new GameMap("Resources/Maps/JafarPlace/untitled_1.tmx", _quadTree);
+	_gameMap = new GameMap("Resources/Maps/JafarPlace/untitled_1.tmx", _grid);
 	_camera = new Camera(_gameMap->GetPlayer());
 
 	//apple weapon counter

@@ -78,6 +78,9 @@ ResourceManager::ResourceManager()
 	_animationXMLBottle = new tinyxml2::XMLDocument();
 	_animationXMLBottle->LoadFile("Resources/Items/Bottle-Animations.xml");
 
+	_animationXMLFloatGround = new tinyxml2::XMLDocument();
+	_animationXMLFloatGround->LoadFile("Resources/Maps/SultansDungeon/Brick.xml");
+
 	_animationXMLPlayerHealthMeter = new tinyxml2::XMLDocument();
 	_animationXMLPlayerHealthMeter->LoadFile("Resources/Items/HealthMeter-Animation.xml");
 
@@ -96,6 +99,8 @@ ResourceManager::ResourceManager()
 	_textureClimbAttack = graphics->LoadTexture(L"Resources/Aladdin/aladdin_attack4_strip7_83_185.png", D3DCOLOR_XRGB(255, 0, 255));
 
 	_texturePlayerClimbThrow = graphics->LoadTexture(L"Resources/Aladdin/aladdin_throw4_strip6_79_161.png", D3DCOLOR_XRGB(255, 0, 255));
+
+	_textureFloatGround = graphics->LoadTexture(L"Resources/Maps/SultansDungeon/Genesis 32X SCD - Aladdin - Sultans Dungeon.png", D3DCOLOR_XRGB(163, 73, 164));
 
 	_textureEnemies1 = graphics->LoadTexture(L"Resources/Enemies/Enemies_Sprite_1.png", D3DCOLOR_XRGB(120, 193, 152));
 	_textureEnemies2 = graphics->LoadTexture(L"Resources/Enemies/Enemies_Sprite_2.png", D3DCOLOR_XRGB(120, 193, 152));
@@ -239,6 +244,16 @@ tinyxml2::XMLDocument* ResourceManager::GetAnimationXMLSpringItem()
 tinyxml2::XMLDocument* ResourceManager::GetAnimationXMLAladdinUp()         
 {
 	return _animationXMLAladdinUp;
+}
+
+tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLFloatGround()
+{
+	return _animationXMLFloatGround;
+}
+
+LPDIRECT3DTEXTURE9 ResourceManager::GetTextureFloatGround() ////////////////
+{
+	return _textureFloatGround;
 }
 
 tinyxml2::XMLDocument* ResourceManager::GetAnimationXMLEnemy3Dead()       

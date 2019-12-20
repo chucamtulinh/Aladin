@@ -43,7 +43,7 @@ void SnakeAttack::Update(float deltatime)
 
 		SceneManager::GetInstance()->GetCurrentScene()->AddGameObjectToWeaponList(weapon);
 
-		QuadTree::InsertDynamicObject(weapon);
+		Grid::InsertDynamicObject(weapon);
 
 
 	}
