@@ -447,6 +447,12 @@
     <ClCompile Include="GameComponents\Grid.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GameObjects\Items\Spike.cpp">
+      <Filter>GameObjects\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Items\Ball.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameComponents\Animation.h">
@@ -822,6 +828,12 @@
       <Filter>GameObjects\Weapons\EnemiesWeapons</Filter>
     </ClInclude>
     <ClInclude Include="GameComponents\Grid.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Items\Spike.h">
+      <Filter>GameObjects\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Items\Ball.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

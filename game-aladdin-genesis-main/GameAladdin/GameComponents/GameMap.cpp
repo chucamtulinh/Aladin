@@ -63,6 +63,52 @@ GameMap::GameMap(char * filePath, Grid* &grid)
 				_grid->InsertStaticObject(apple);
 			}
 
+			//init spike
+			if (objectGroup->GetName() == "Spike")
+			{
+				Spike *spike = new Spike(0);
+				spike->SetId(object->GetId());
+				spike->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
+
+				_listSpike.push_back(spike);
+
+				_grid->InsertStaticObject(spike);
+			}
+
+			if (objectGroup->GetName() == "Spike_1")
+			{
+				Spike *spike = new Spike(1);
+				spike->SetId(object->GetId());
+				spike->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
+
+				_listSpike.push_back(spike);
+
+				_grid->InsertStaticObject(spike);
+			}
+
+			//init Ball
+			if (objectGroup->GetName() == "Ball")
+			{
+				Ball *ball = new Ball(0);
+				ball->SetId(object->GetId());
+				ball->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
+
+				_listBall.push_back(ball);
+
+				_grid->InsertStaticObject(ball);
+			}
+
+			if (objectGroup->GetName() == "Ball_1")
+			{
+				Ball *spike = new Ball(1);
+				spike->SetId(object->GetId());
+				spike->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
+
+				_listBall.push_back(spike);
+
+				_grid->InsertStaticObject(spike);
+			}
+
 			//init apple
 			if (objectGroup->GetName() == "Rubby")
 			{
@@ -80,7 +126,6 @@ GameMap::GameMap(char * filePath, Grid* &grid)
 			{
 				FloatGround *floatGround = new FloatGround(0);
 				floatGround->SetId(object->GetId());
-				floatGround->SetId(object->GetId());
 				floatGround->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
 
 				_listFloatGrounds.push_back(floatGround);
@@ -91,7 +136,6 @@ GameMap::GameMap(char * filePath, Grid* &grid)
 			if (objectGroup->GetName() == "FloatGround_1")
 			{
 				FloatGround *floatGround = new FloatGround(1);
-				floatGround->SetId(object->GetId());
 				floatGround->SetId(object->GetId());
 				floatGround->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
 
@@ -366,7 +410,7 @@ GameMap::GameMap(char * filePath, Grid* &grid)
 			//init wall
 			if (objectGroup->GetName() == "ToJafarScene")
 			{
-				GameObject *gameObject = new GameObject(GameObject::GameObjectType::ToJafarScene);
+				GameObject *gameObject = new GameObject(GameObject::GameObjectType::ToJafarScene, false);
 				gameObject->SetId(object->GetId());
 				gameObject->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() + object->GetHeight() / 2);
 				gameObject->SetWidth(object->GetWidth());
@@ -519,6 +563,14 @@ void GameMap::Update(float deltaTime)
 	for (size_t i = 0; i < _listFloatGrounds.size(); i++)
 		_listFloatGrounds[i]->Update(deltaTime);
 
+	//spike
+	for (size_t i = 0; i < _listSpike.size(); i++)
+		_listSpike[i]->Update(deltaTime);
+
+	//ball
+	for (size_t i = 0; i < _listBall.size(); i++)
+		_listBall[i]->Update(deltaTime);
+
 	//springboard
 	for (size_t i = 0; i < _listSpringboards.size(); i++)
 		_listSpringboards[i]->Update(deltaTime);
@@ -614,6 +666,38 @@ void GameMap::Draw(Camera * camera)
 
 		//visible -> draw
 		_listApples[i]->Draw(camera);
+	}
+
+	//Spike
+	for (size_t i = 0; i < _listSpike.size(); i++)
+	{
+		//remove not visible object
+		if (!_listSpike[i]->IsVisible())
+		{
+			_grid->RemoveStaticObject(_listSpike[i]);
+			_listSpike.erase(_listSpike.begin() + i);
+			i--;
+			continue;
+		}
+
+		//visible -> draw
+		_listSpike[i]->Draw(camera);
+	}
+
+	//Ball
+	for (size_t i = 0; i < _listBall.size(); i++)
+	{
+		//remove not visible object
+		if (!_listBall[i]->IsVisible())
+		{
+			_grid->RemoveStaticObject(_listBall[i]);
+			_listBall.erase(_listBall.begin() + i);
+			i--;
+			continue;
+		}
+
+		//visible -> draw
+		_listBall[i]->Draw(camera);
 	}
 
 	//rubby

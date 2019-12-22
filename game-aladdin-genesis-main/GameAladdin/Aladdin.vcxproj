@@ -154,6 +154,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="GameObjects\Items\Ball.cpp" />
     <ClCompile Include="Bat.cpp" />
     <ClCompile Include="BatFlyState.cpp" />
     <ClCompile Include="GameComponents\Animation.cpp" />
@@ -254,6 +255,7 @@
     <ClCompile Include="Scenes\JafarScene.cpp" />
     <ClCompile Include="Scenes\MainScene.cpp" />
     <ClCompile Include="Scenes\SelectScene.cpp" />
+    <ClCompile Include="GameObjects\Items\Spike.cpp" />
     <ClCompile Include="TmxParser\base64\base64.cpp" />
     <ClCompile Include="TmxParser\miniz.c" />
     <ClCompile Include="TmxParser\tinyxml2\tinyxml2.cpp" />
@@ -278,6 +280,7 @@
     <ClCompile Include="TmxParser\TmxUtil.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GameObjects\Items\Ball.h" />
     <ClInclude Include="Bat.h" />
     <ClInclude Include="BatDamageState.h" />
     <ClInclude Include="BatFlyState.h" />
@@ -380,6 +383,7 @@
     <ClInclude Include="Scenes\JafarScene.h" />
     <ClInclude Include="Scenes\MainScene.h" />
     <ClInclude Include="Scenes\SelectScene.h" />
+    <ClInclude Include="GameObjects\Items\Spike.h" />
     <ClInclude Include="TmxParser\base64\base64.h" />
     <ClInclude Include="TmxParser\tinyxml2\tinyxml2.h" />
     <ClInclude Include="TmxParser\TmxColor.h" />

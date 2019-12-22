@@ -35,6 +35,8 @@ private:
 	tinyxml2::XMLDocument *_animationXMLAladdinUp;
 	tinyxml2::XMLDocument *_animationXMLItemsRubby;
 	tinyxml2::XMLDocument *_animationXMLMonkey;
+	tinyxml2::XMLDocument *_animationXMLSpike;
+	tinyxml2::XMLDocument *_animationXMLBall;
 
 	tinyxml2::XMLDocument *_animationXMLJafar;
 	tinyxml2::XMLDocument *_animationXMLSnake;
@@ -60,6 +62,8 @@ private:
 	LPDIRECT3DTEXTURE9 _textureAladdinUp;
 	LPDIRECT3DTEXTURE9 _textureMonkey;
 	LPDIRECT3DTEXTURE9 _textureFloatGround;
+	LPDIRECT3DTEXTURE9 _textureSpike;
+	LPDIRECT3DTEXTURE9 _textureBall;
 
 	//map 1
 	LPDIRECT3DTEXTURE9 _textureSultanDungeon;
@@ -108,6 +112,8 @@ public:
 	tinyxml2::XMLDocument* GetAnimationXMLCoalFire();
 	tinyxml2::XMLDocument* GetAnimationXMLBottle();
 	tinyxml2::XMLDocument* GetAnimationXMLFloatGround();
+	tinyxml2::XMLDocument* GetAnimationXMLSpike();
+	tinyxml2::XMLDocument* GetAnimationXMLBall();
 
 	tinyxml2::XMLDocument* GetAnimationXMLJafar();
 	tinyxml2::XMLDocument* GetAnimationXMLSnake();
@@ -125,6 +131,8 @@ public:
 	LPDIRECT3DTEXTURE9 GetTextureSpringItem();
 	LPDIRECT3DTEXTURE9 GetTextureAladdinUp();
 	LPDIRECT3DTEXTURE9 GetTextureFloatGround();
+	LPDIRECT3DTEXTURE9 GetTextureSpike();
+	LPDIRECT3DTEXTURE9 GetTextureBall();
 
 	LPDIRECT3DTEXTURE9 GetTextureEnemies1();
 	LPDIRECT3DTEXTURE9 GetTextureEnemies2();

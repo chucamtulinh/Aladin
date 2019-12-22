@@ -79,7 +79,13 @@ ResourceManager::ResourceManager()
 	_animationXMLBottle->LoadFile("Resources/Items/Bottle-Animations.xml");
 
 	_animationXMLFloatGround = new tinyxml2::XMLDocument();
-	_animationXMLFloatGround->LoadFile("Resources/Maps/SultansDungeon/Brick.xml");
+	_animationXMLFloatGround->LoadFile("Resources/Maps/SultansDungeon/Brick1.xml");
+
+	_animationXMLSpike = new tinyxml2::XMLDocument();
+	_animationXMLSpike->LoadFile("Resources/Maps/SultansDungeon/Spike.xml");
+
+	_animationXMLBall = new tinyxml2::XMLDocument();
+	_animationXMLBall->LoadFile("Resources/Maps/SultansDungeon/Ball.xml");
 
 	_animationXMLPlayerHealthMeter = new tinyxml2::XMLDocument();
 	_animationXMLPlayerHealthMeter->LoadFile("Resources/Items/HealthMeter-Animation.xml");
@@ -100,7 +106,10 @@ ResourceManager::ResourceManager()
 
 	_texturePlayerClimbThrow = graphics->LoadTexture(L"Resources/Aladdin/aladdin_throw4_strip6_79_161.png", D3DCOLOR_XRGB(255, 0, 255));
 
-	_textureFloatGround = graphics->LoadTexture(L"Resources/Maps/SultansDungeon/Genesis 32X SCD - Aladdin - Sultans Dungeon.png", D3DCOLOR_XRGB(163, 73, 164));
+	/*_textureFloatGround = graphics->LoadTexture(L"Resources/Maps/SultansDungeon/Genesis 32X SCD - Aladdin - Sultans Dungeon.png", D3DCOLOR_XRGB(163, 73, 164));*/
+	_textureFloatGround = graphics->LoadTexture(L"Resources/Maps/SultansDungeon/Brick2.png", D3DCOLOR_XRGB(255, 255, 255));
+	_textureSpike = graphics->LoadTexture(L"Resources/Maps/SultansDungeon/Spike1.png", D3DCOLOR_XRGB(255, 255, 255));
+	_textureBall = graphics->LoadTexture(L"Resources/Maps/SultansDungeon/Ball2.png", D3DCOLOR_XRGB(255, 255, 255));
 
 	_textureEnemies1 = graphics->LoadTexture(L"Resources/Enemies/Enemies_Sprite_1.png", D3DCOLOR_XRGB(120, 193, 152));
 	_textureEnemies2 = graphics->LoadTexture(L"Resources/Enemies/Enemies_Sprite_2.png", D3DCOLOR_XRGB(120, 193, 152));
@@ -151,6 +160,7 @@ ResourceManager::ResourceManager()
 	Sound::GetInstance()->LoadSound("Resources/Sounds/MenuSelect_Background.wav", "MenuSelect_Background");
 	Sound::GetInstance()->LoadSound("Resources/Sounds/MenuSelect_SelectChange.wav", "MenuSelect_SelectChange");
 	Sound::GetInstance()->LoadSound("Resources/Sounds/MenuSelect_Selected.wav", "MenuSelect_Selected");
+	Sound::GetInstance()->LoadSound("Resources/Sounds/Wall Spikes.wav", "Wall_Spikes");
 }
 
 
@@ -254,6 +264,26 @@ tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLFloatGround()
 LPDIRECT3DTEXTURE9 ResourceManager::GetTextureFloatGround() ////////////////
 {
 	return _textureFloatGround;
+}
+
+tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLSpike()
+{
+	return _animationXMLSpike;
+}
+
+LPDIRECT3DTEXTURE9 ResourceManager::GetTextureSpike() ////////////////
+{
+	return _textureSpike;
+}
+
+tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLBall()
+{
+	return _animationXMLBall;
+}
+
+LPDIRECT3DTEXTURE9 ResourceManager::GetTextureBall() ////////////////
+{
+	return _textureBall;
 }
 
 tinyxml2::XMLDocument* ResourceManager::GetAnimationXMLEnemy3Dead()       

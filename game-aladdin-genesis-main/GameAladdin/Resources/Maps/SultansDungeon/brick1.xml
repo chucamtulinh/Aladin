@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animations>
+  <Animation name="Odd" imagePath="Brick2.png" width="210" height="26">
+    <sprite x="1" y="1" w="40" h="23" oX="1" oY="1" oW="22" oH="194" />
+    <sprite x="43" y="1" w="40" h="23" oX="43" oY="1" oW="22" oH="194" />
+    <sprite x="85" y="1" w="40" h="23" oX="85" oY="1" oW="22" oH="194" />
+    <sprite x="127" y="1" w="40" h="23" oX="127" oY="1" oW="22" oH="194" />
+    <sprite x="169" y="1" w="40" h="23" oX="169" oY="1" oW="22" oH="194" />
+    <sprite x="169" y="1" w="40" h="23" oX="169" oY="1" oW="22" oH="194" />
+    <sprite x="169" y="1" w="40" h="23" oX="169" oY="1" oW="22" oH="194" />
+    <sprite x="169" y="1" w="40" h="23" oX="169" oY="1" oW="22" oH="194" />
+    <sprite x="169" y="1" w="40" h="23" oX="169" oY="1" oW="22" oH="194" />
+    <sprite x="169" y="1" w="40" h="23" oX="169" oY="1" oW="22" oH="194" />
+    <sprite x="169" y="1" w="40" h="23" oX="169" oY="1" oW="22" oH="194" />
+    <sprite x="127" y="1" w="40" h="23" oX="127" oY="1" oW="22" oH="194" />
+    <sprite x="85" y="1" w="40" h="23" oX="85" oY="1" oW="22" oH="194" />
+    <sprite x="43" y="1" w="40" h="23" oX="43" oY="1" oW="22" oH="194" />
+    <sprite x="1" y="1" w="40" h="23" oX="1" oY="1" oW="22" oH="194" />
+    <sprite x="1" y="1" w="40" h="23" oX="1" oY="1" oW="22" oH="194" />
+    <sprite x="1" y="1" w="40" h="23" oX="1" oY="1" oW="22" oH="194" />
+    <sprite x="1" y="1" w="40" h="23" oX="1" oY="1" oW="22" oH="194" />
+    <sprite x="1" y="1" w="40" h="23" oX="1" oY="1" oW="22" oH="194" />
+    <sprite x="1" y="1" w="40" h="23" oX="1" oY="1" oW="22" oH="194" />
+  </Animation>
+</Animations>

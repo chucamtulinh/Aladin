@@ -14,6 +14,7 @@ private:
 
 	PlayerState *_state;
 	bool _isRight, _isGround, _allowMoveLeft, _allowMoveRight;
+	GameObject* _ground;
 	float _speed, _jumpForce, _jumpRunForce;
 
 	//when colliding with coal, each duration, player's health will decrease

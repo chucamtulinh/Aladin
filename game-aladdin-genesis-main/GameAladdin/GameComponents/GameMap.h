@@ -6,6 +6,8 @@
 #include "../GameObjects/Camera.h"
 #include "../GameObjects/Items/Apple.h"
 #include "../GameObjects/Items/FloatGround.h"
+#include "../GameObjects/Items/Spike.h"
+#include "../GameObjects/Items/Ball.h"
 #include "../GameObjects/Items/Springboard.h"
 #include "../GameObjects/Player/Player.h"
 #include "../GameObjects/Enemies/Enemy1/Enemy1.h"
@@ -36,6 +38,8 @@ private:
 	std::vector<Apple*> _listApples;
 	std::vector<Rubby*> _listRubbies;
 	std::vector<FloatGround*> _listFloatGrounds;
+	std::vector<Spike*> _listSpike;
+	std::vector<Ball*> _listBall;
 	std::vector<Springboard*> _listSpringboards;
 	std::vector<Enemy*> _listEnemies;
 	std::vector<Camel*> _listCamels;

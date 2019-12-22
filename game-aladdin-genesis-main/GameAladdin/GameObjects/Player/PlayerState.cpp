@@ -29,7 +29,6 @@ void PlayerState::Update(float deltaTime)
 	{
 		_animation->SetPosition(_player->GetPosition());
 		_animation->FlipHorizontal(!_player->IsRight());
-
 		_animation->Update(deltaTime);//after animation update, animation's position maybe change
 		_player->SetPosition(_animation->GetPosition());
 	}

@@ -74,10 +74,10 @@ bool Game::Initialize()
 	this->_timer = Timer::GetInstance();
 
 	// Show MainScene
-	SceneManager::GetInstance()->ReplaceScene(new MainScene());
+	//SceneManager::GetInstance()->ReplaceScene(new MainScene());
 	//SceneManager::GetInstance()->ReplaceScene(new JafarScene());
 	//SceneManager::GetInstance()->ReplaceScene(new CompleteScene());
-	//SceneManager::GetInstance()->ReplaceScene(new SelectScene());
+	SceneManager::GetInstance()->ReplaceScene(new SelectScene());
 
 	// init rand
 	srand(time(0));

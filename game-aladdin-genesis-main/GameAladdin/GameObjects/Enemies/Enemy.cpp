@@ -49,17 +49,16 @@ Enemy::~Enemy()
 void Enemy::Update(float deltaTime)
 {
 	_animationSprite->Update(deltaTime);
-
-	// calculate distance to target (player)
-	_distanceToTarget = _target->GetPosition() - _position;
-
+	
 	//check isDie
 	if (_health <= 0)
 	{
 		_isDead = true;
-		SetDamage(0);
 		//_isVisible = false;
 	}
+
+	// calculate distance to target (player)
+	_distanceToTarget = _target->GetPosition() - _position;
 
 	//face to left or right
 	if (_distanceToTarget.x > 0)
@@ -68,7 +67,7 @@ void Enemy::Update(float deltaTime)
 		_isRight = false;
 
 	//move
-	if (IsTargetInViewRange() && !IsTargetInAttackRange())
+	if (IsTargetInViewRange() && !IsTargetInAttackRange() && !_isDead)
 	{
 		if (_distanceToTarget.x > 0 && _isMovableObject && _allowMoveRight)
 		{
@@ -111,6 +110,9 @@ void Enemy::Draw(Camera * camera)
 
 	if (_isDead)
 	{
+		SetDamage(0);
+		_velocity.x = 0;
+		_velocity.y = 0;
 		_animationSprite->SetPosition(_position);
 		_animationSprite->Draw(camera);
 

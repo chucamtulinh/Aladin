@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.3.1" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="1" height="1" tilewidth="2269" tileheight="1138" infinite="0" nextlayerid="25" nextobjectid="398">
+<map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="2269" tileheight="1138" infinite="0" nextlayerid="29" nextobjectid="419">
  <tileset firstgid="1" name="SultansDungeon" tilewidth="2269" tileheight="1138" tilecount="3" columns="1">
   <image source="SultansDungeon.png" width="2269" height="3414"/>
  </tileset>
@@ -36,9 +36,18 @@
  <tileset firstgid="16" name="Enemy4" tilewidth="50" tileheight="82" tilecount="1" columns="1">
   <image source="demo_tmx/Skeleton.png" width="50" height="82"/>
  </tileset>
+ <tileset firstgid="17" name="Spike_sample" tilewidth="49" tileheight="35" tilecount="1" columns="1">
+  <image source="Spike_sample.png" width="49" height="35"/>
+ </tileset>
+ <tileset firstgid="18" name="Spike_sample_2" tilewidth="49" tileheight="35" tilecount="1" columns="1">
+  <image source="Spike_sample_2.png" width="49" height="35"/>
+ </tileset>
+ <tileset firstgid="19" name="Ball_sample" tilewidth="33" tileheight="66" tilecount="1" columns="1">
+  <image source="Ball_sample.png" width="33" height="67"/>
+ </tileset>
  <layer id="1" name="Tile Layer 1" width="1" height="1">
   <data encoding="base64" compression="zlib">
-   eAFjZGBgAAAACAAC
+   eJxjZGBgAAAACAAC
   </data>
  </layer>
  <objectgroup id="17" name="ScoreObject2">
@@ -48,6 +57,14 @@
  <objectgroup id="21" name="FloatGround">
   <object id="274" gid="15" x="1293.75" y="1052.58" width="40" height="24"/>
   <object id="276" gid="15" x="1311.42" y="970.667" width="40" height="24"/>
+ </objectgroup>
+ <objectgroup id="27" name="ToJafarScene">
+  <object id="414" x="2192" y="128" width="66" height="112"/>
+ </objectgroup>
+ <objectgroup id="26" name="Spike_1">
+  <object id="405" gid="18" x="772.25" y="1070.25" width="49" height="35"/>
+  <object id="406" gid="18" x="772.375" y="1101.75" width="49" height="35"/>
+  <object id="407" gid="18" x="256.25" y="1049.38" width="49" height="35"/>
  </objectgroup>
  <objectgroup id="22" name="FloatGround_1">
   <object id="282" gid="15" x="1247.33" y="1003" width="40" height="24"/>
@@ -186,12 +203,12 @@
   <object id="252" x="765" y="716" width="18" height="23"/>
   <object id="253" x="864" y="715" width="14" height="23"/>
   <object id="254" x="624" y="436" width="15" height="21"/>
+  <object id="409" x="2224" y="37" width="69" height="235"/>
  </objectgroup>
  <objectgroup id="3" name="Player">
-  <object id="8" gid="4" x="85.75" y="1096" width="37" height="50"/>
+  <object id="8" gid="4" x="891.614" y="705.515" width="37" height="50"/>
  </objectgroup>
  <objectgroup id="24" name="Enemy_4_Left">
-  <object id="293" x="170" y="1068.5"/>
   <object id="300" gid="16" x="585" y="915" width="50" height="82"/>
   <object id="301" gid="16" x="932.333" y="833" width="50" height="82"/>
   <object id="302" gid="16" x="1153.67" y="915.667" width="50" height="82"/>
@@ -201,6 +218,14 @@
   <object id="312" gid="16" x="1712.33" y="770.333" width="50" height="82"/>
   <object id="313" gid="16" x="1857.67" y="609" width="50" height="82"/>
   <object id="314" gid="16" x="1633.67" y="530.333" width="50" height="82"/>
+ </objectgroup>
+ <objectgroup id="28" name="Ball">
+  <object id="418" gid="19" x="214.5" y="1086.5" width="33" height="66"/>
+ </objectgroup>
+ <objectgroup id="25" name="Spike">
+  <object id="400" gid="18" x="256.75" y="1092.5" width="49" height="35"/>
+  <object id="401" gid="18" x="723" y="1070.33" width="49" height="35"/>
+  <object id="402" gid="18" x="723.333" y="1101.67" width="49" height="35"/>
  </objectgroup>
  <objectgroup id="7" name="Apple">
   <object id="19" gid="5" x="351.5" y="1035" width="11" height="12"/>
@@ -305,7 +330,6 @@
   <object id="306" gid="8" x="1329" y="1096.67" width="55" height="52"/>
   <object id="307" gid="8" x="979.667" y="267.333" width="55" height="52"/>
   <object id="308" gid="8" x="1150.33" y="207.333" width="55" height="52"/>
-  <object id="309" gid="8" x="1954.33" y="240.667" width="55" height="52"/>
   <object id="310" gid="8" x="2086.33" y="592.667" width="55" height="52"/>
   <object id="311" gid="8" x="2090.33" y="1099.33" width="55" height="52"/>
   <object id="373" gid="8" x="1339.67" y="367.333" width="55" height="52"/>

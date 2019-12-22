@@ -16,7 +16,7 @@ PlayerIdleState::PlayerIdleState()
 
 PlayerIdleState::PlayerIdleState(Player* player) :PlayerState(player, PlayerState::StateName::Idle)
 {
-	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "Idle", ResourceManager::GetInstance()->GetTextureAladdin(), true, 1.8f));
+	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "Idle", ResourceManager::GetInstance()->GetTextureAladdin(), true, 1.6f));
 }
 
 

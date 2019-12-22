@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animations>
+  <Animation name="ani" imagePath="Ball2.png" width="525" height="69">
+    <sprite x="1" y="1"   w="33" h="66" oX="1" oY="1" oW="29" oH="495" />
+    <sprite x="35" y="1"  w="33" h="66" oX="35" oY="1" oW="29" oH="495" />
+    <sprite x="70" y="1"  w="33" h="66" oX="70" oY="1" oW="29" oH="495" />
+    <sprite x="105" y="1" w="33" h="66" oX="105" oY="1" oW="29" oH="495" />
+    <sprite x="140" y="1" w="33" h="66" oX="140" oY="1" oW="29" oH="495" />
+    <sprite x="176" y="1" w="33" h="66" oX="176" oY="1" oW="29" oH="495" />
+    <sprite x="211" y="1" w="33" h="66" oX="211" oY="1" oW="29" oH="495" />
+    <sprite x="246" y="1" w="33" h="66" oX="246" oY="1" oW="29" oH="495" />
+    <sprite x="281" y="1" w="33" h="66" oX="281" oY="1" oW="29" oH="495" />
+    <sprite x="316" y="1" w="33" h="66" oX="316" oY="1" oW="29" oH="495" />
+    <sprite x="351" y="1" w="33" h="66" oX="351" oY="1" oW="29" oH="495" />
+    <sprite x="386" y="1" w="33" h="66" oX="386" oY="1" oW="29" oH="495" />
+    <sprite x="421" y="1" w="33" h="66" oX="421" oY="1" oW="29" oH="495" />
+    <sprite x="456" y="1" w="33" h="66" oX="456" oY="1" oW="29" oH="495" />
+    <sprite x="491" y="1" w="33" h="66" oX="491" oY="1" oW="29" oH="495" />
+    <sprite x="456" y="1" w="33" h="66" oX="456" oY="1" oW="29" oH="495" />
+    <sprite x="421" y="1" w="33" h="66" oX="421" oY="1" oW="29" oH="495" />
+    <sprite x="386" y="1" w="33" h="66" oX="386" oY="1" oW="29" oH="495" />
+    <sprite x="351" y="1" w="33" h="66" oX="351" oY="1" oW="29" oH="495" />
+    <sprite x="316" y="1" w="33" h="66" oX="316" oY="1" oW="29" oH="495" />
+	<sprite x="281" y="1" w="33" h="66" oX="281" oY="1" oW="29" oH="495" />
+    <sprite x="246" y="1" w="33" h="66" oX="246" oY="1" oW="29" oH="495" />
+    <sprite x="211" y="1" w="33" h="66" oX="211" oY="1" oW="29" oH="495" />
+    <sprite x="176" y="1" w="33" h="66" oX="176" oY="1" oW="29" oH="495" />
+    <sprite x="140" y="1" w="33" h="66" oX="140" oY="1" oW="29" oH="495" />
+    <sprite x="105" y="1" w="33" h="66" oX="105" oY="1" oW="29" oH="495" />
+    <sprite x="70" y="1"  w="33" h="66" oX="70" oY="1" oW="29" oH="495" />
+    <sprite x="35" y="1"  w="33" h="66" oX="35" oY="1" oW="29" oH="495" />
+    <sprite x="1" y="1"   w="33" h="66" oX="1" oY="1" oW="29" oH="495" />
+  </Animation>
+</Animations>

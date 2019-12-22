@@ -18,8 +18,8 @@
 //#include "utils.h"
 using namespace std;
 
-#define WINDOW_WIDTH 840 
-#define WINDOW_HEIGHT 648
+#define WINDOW_WIDTH 640 
+#define WINDOW_HEIGHT 448
 
 #define SCALE_FACTOR 2.0f
 
@@ -35,7 +35,7 @@ using namespace std;
 
 #define PLAYER_MASS 35
 #define PLAYER_SPEED 45
-#define PLAYER_JUMP_FORCE 70
+#define PLAYER_JUMP_FORCE 80
 #define PLAYER_JUMP_RUN_FORCE 80
 
 #define NUM_APPLE_WEAPON 99

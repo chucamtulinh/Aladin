@@ -126,6 +126,7 @@ void Player::CheckCollision()
 	SceneManager::GetInstance()->GetCurrentScene()->GetGrid()->GetListObject(listCanCollide, camera);
 
 	bool playerGround = false;
+	_ground = NULL;
 	bool allowPlayerMoveLeft = true;
 	bool allowPlayerMoveRight = true;
 	bool isPushWall = false;
@@ -133,7 +134,7 @@ void Player::CheckCollision()
 	for (size_t i = 0; i < listCanCollide.size(); i++)
 	{
 		GameObject *gameObject = listCanCollide.at(i);
-		if (!gameObject->IsVisible())
+		if (!gameObject->IsVisible() || !gameObject->IsCollidable())
 			continue;
 
 		//lay va cham cua other voi this
@@ -153,12 +154,12 @@ void Player::CheckCollision()
 					|| collisionData.GetSide() == GameCollision::SideCollisions::BottomRight)
 				{
 					playerGround = true;
+					_ground = gameObject;
 
 					// Kéo Aladdin xuống mọi lúc, để va chạm không bị thục xuống
 					// -> không sử dụng được
 					//this->_position.y -= (10 * _deltaTime);
 				}
-				if (!gameObject->IsCollidable()) playerGround = false;
 			}
 
 			/////////////////////////////////////////
@@ -389,6 +390,9 @@ void Player::OnCollision(GameObject * target, GameCollision::SideCollisions side
 		}
 	}
 
+	if(target->GetTag() == GameObject::GameObjectType::Spike
+		|| target->GetTag() == GameObject::GameObjectType::Ball) SetHealth(_health - 10);
+
 	if (target->GetTag() == GameObject::GameObjectType::Weapons)
 	{
 		if (_state->GetName() != PlayerState::StateName::Attack &&
@@ -459,8 +463,11 @@ void Player::SetState(PlayerState * state, bool fixFootPosition)
 		int newHeight = state->GetAnimation()->GetHeight();
 		int currentHeight = _state->GetAnimation()->GetHeight();
 		float diff = (currentHeight - newHeight) / 2.0;
-		_position.y += diff;
+		_position.y += diff;	
+		if (_ground != NULL && _position.y <= _ground->GetBound().top - newHeight / 2.0) _position.y = _ground->GetBound().top - newHeight / 2.0;
 	}
+
+	
 
 	//change state
 	delete _state;

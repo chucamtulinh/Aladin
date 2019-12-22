@@ -30,6 +30,8 @@ public:
 		ScoreObjects,
 		Springboard,
 		Camels,
+		Spike,
+		Ball,
 		ToJafarScene,
 		Stairs,
 		StairsEndTop,

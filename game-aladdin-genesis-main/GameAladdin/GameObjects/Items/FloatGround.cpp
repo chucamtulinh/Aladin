@@ -5,10 +5,10 @@
 FloatGround::FloatGround(int type) : GameObject(GameObject::GameObjectType::FloatGround, false)
 {
 	RECT floatGroundSourceRect;
-	floatGroundSourceRect.left = 155;
-	floatGroundSourceRect.right = 195; //+40
-	floatGroundSourceRect.top = 1770;
-	floatGroundSourceRect.bottom = 1794; //+24
+	floatGroundSourceRect.left = 1;
+	floatGroundSourceRect.right = 1; //+40
+	floatGroundSourceRect.top = 41;
+	floatGroundSourceRect.bottom = 25; //+24
 
 	_animationRubby = new Animation(ResourceManager::GetInstance()->GetAnimationXMLFloatGround(), "Odd", ResourceManager::GetInstance()->GetTextureFloatGround(), true, 0.8f);
 	if (type == 1) _animationRubby->SetCurrentIndex(10);
@@ -39,9 +39,4 @@ void FloatGround::Draw(Camera * camera)
 
 void FloatGround::OnCollision(Player * target, GameCollision::SideCollisions side)
 {
-	if (target->IsGround()) return;
-	if (!this->IsCollidable() && (side == GameCollision::SideCollisions::Top /*|| side == GameCollision::SideCollisions::TopLeft || side == GameCollision::SideCollisions::TopRight*/) && target->GetState()->GetName() != PlayerState::StateName::Idle && target->GetState()->GetName() != PlayerState::StateName::Run && target->GetState()->GetName() != PlayerState::StateName::CrouchIdle)
-	{
-		target->SetState(new PlayerFallState(target));
-	}
 }
