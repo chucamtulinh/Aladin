@@ -12,7 +12,7 @@ Enemy4Weapon::Enemy4Weapon(int damage) : Weapon(Weapon::WeaponType::EnemiesWeapo
 	_velocity.x = 20;//left or right
 	_velocity.y = -20;
 
-	_mass = 10;
+	_mass = 25;
 	_acceleration.y = _mass;
 }
 
@@ -24,18 +24,16 @@ Enemy4Weapon::~Enemy4Weapon()
 void Enemy4Weapon::OnCollision(GameObject * target, GameCollision::SideCollisions side)
 {
 	//prevent collision with PlayerWeapons
-	if (target->GetTag() == GameObjectType::Weapons)
+	if (target->GetTag() == GameObjectType::Players)
 	{
-		Weapon* weapon = dynamic_cast<Weapon*>(target);
-		if (weapon->GetWeaponType() == Weapon::WeaponType::PlayerWeapons)
-			return;
+		this->SetIsVisible(false);
 	}
-
+/*
 	if (target->GetTag() != GameObject::GameObjectType::Enemies
 		&& target->GetTag() != GameObject::GameObjectType::Apple)
 	{
 		_isVisible = false;
 		_acceleration.y = 0;
 		_velocity.x = _velocity.y = 0;
-	}
+	}*/
 }

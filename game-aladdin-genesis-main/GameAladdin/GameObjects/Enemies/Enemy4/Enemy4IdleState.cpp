@@ -27,22 +27,32 @@ void Enemy4IdleState::Update(float deltaTime)
 	if (_animation->IsFinish())
 	{
 		_enemy->SetIsVisible(false);
+
+		Enemy4Weapon* weaponR = new Enemy4Weapon();
+		weaponR->SetPosition(_enemy->GetPosition().x, _enemy->GetPosition().y - _enemy->GetHeight() / 2);
+		weaponR->SetVelocity(-60, 0);
+		SceneManager::GetInstance()->GetCurrentScene()->AddGameObjectToWeaponList(weaponR);
+
 		Enemy4Weapon* weaponL = new Enemy4Weapon();
 		weaponL->SetPosition(_enemy->GetPosition().x, _enemy->GetPosition().y - _enemy->GetHeight() / 2);
 		
 		//set left or right for velocityX
-		weaponL->SetVelocity(_enemy->GetTarget()->GetPosition() - _enemy->GetPosition());
-	
+		//weaponL->SetVelocity(_enemy->GetTarget()->GetPosition() - _enemy->GetPosition());
+		weaponL->SetVelocity(60,10);
 		//add gameobject to update&draw list
 		SceneManager::GetInstance()->GetCurrentScene()->AddGameObjectToWeaponList(weaponL);
 		
-		//add appleWeapon to QuadTree
-		Grid::InsertDynamicObject(weaponL);
-		_enemy->SetIsVisible(false);
-		/*Enemy4Weapon2* weaponR = new Enemy4Weapon2();
-		weaponR->SetVelocity(_enemy->GetPosition() - _enemy->GetTarget()->GetPosition());
-		SceneManager::GetInstance()->GetCurrentScene()->AddGameObjectToWeaponList(weaponR);
-		Grid::InsertDynamicObject(weaponR);*/
+		Enemy4Weapon* weapon3 = new Enemy4Weapon();
+		weapon3->SetPosition(_enemy->GetPosition().x, _enemy->GetPosition().y - _enemy->GetHeight() / 2);
+		weapon3->SetVelocity(-10, -70);
+		SceneManager::GetInstance()->GetCurrentScene()->AddGameObjectToWeaponList(weapon3);
+
+		Enemy4Weapon* weapon4 = new Enemy4Weapon();
+		weapon4->SetPosition(_enemy->GetPosition().x, _enemy->GetPosition().y - _enemy->GetHeight() / 2);
+		weapon4->SetVelocity(10, -70);
+		SceneManager::GetInstance()->GetCurrentScene()->AddGameObjectToWeaponList(weapon4);
+		
+		//Grid::InsertDynamicObject(weaponR);
 		
 	}
 }

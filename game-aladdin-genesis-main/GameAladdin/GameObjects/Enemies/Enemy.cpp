@@ -57,6 +57,7 @@ void Enemy::Update(float deltaTime)
 	if (_health <= 0)
 	{
 		_isDead = true;
+		SetDamage(0);
 		//_isVisible = false;
 	}
 

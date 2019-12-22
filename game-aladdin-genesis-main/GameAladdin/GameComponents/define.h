@@ -18,8 +18,8 @@
 //#include "utils.h"
 using namespace std;
 
-#define WINDOW_WIDTH 640 
-#define WINDOW_HEIGHT 448
+#define WINDOW_WIDTH 840 
+#define WINDOW_HEIGHT 648
 
 #define SCALE_FACTOR 2.0f
 

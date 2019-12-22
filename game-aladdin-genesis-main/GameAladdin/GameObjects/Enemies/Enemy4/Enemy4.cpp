@@ -10,8 +10,8 @@ Enemy4::Enemy4(GameObject * player):Enemy(player)
 {
 	_state = new Enemy4IdleState(this);
 
-	_attackRangeX = 180;
-	_attackRangeY = 180;
+	_attackRangeX = 1080;
+	_attackRangeY = 1080;
 
 	_isMovableObject = false;
 	_canFlip = false;

@@ -24,31 +24,5 @@ void Enemy3Dead::Update(float deltaTime)
 {
 	EnemyState::Update(deltaTime);
 
-	////create weapon
-	//if (!_isCreatedWeapon && _animation->GetCurrentIndex() == 2)
-	//{
-	//	_isCreatedWeapon = true;
-
-	//	Enemy4Weapon* weapon = new Enemy4Weapon();
-	//	weapon->SetPosition(_enemy->GetPosition().x, _enemy->GetPosition().y - _enemy->GetHeight() / 2);
-
-	//	//set left or right for velocityX
-	//	weapon->SetVelocity(_enemy->GetTarget()->GetPosition() - _enemy->GetPosition());
-
-	//	//add gameobject to update&draw list
-	//	SceneManager::GetInstance()->GetCurrentScene()->AddGameObjectToWeaponList(weapon);
-
-	//	//add appleWeapon to QuadTree
-	//	Grid::InsertDynamicObject(weapon);
-	//}
-	////reset _isCreatedWeapon
-	//if (_animation->GetCurrentIndex() == 3)
-	//	_isCreatedWeapon = false;
-
-	////change state
-	//if (!_enemy->IsTargetInAttackRange() && _enemy->GetTarget()->GetVelocity().x != 0)
-	//{
-	//	_enemy->SetState(new Enemy3WalkState(_enemy));
-	//	return;
-	//}
+	
 }

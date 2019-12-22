@@ -13,6 +13,8 @@ Enemy3::Enemy3(GameObject * player):Enemy(player)
 	_attackRangeX = 100;
 	_entryDead = false;
 	_speed = 20;
+	_viewRangeX = 170;
+	_viewRangeY = 120;
 	//_acceleration.y = 80;
 }
 
@@ -42,24 +44,24 @@ void Enemy3::Update(float deltaTime)
 		_isRight = false;
 
 	//move
-	if (IsTargetInViewRange() && IsTargetInAttackRange())
+	if (IsTargetInViewRange())
 	{
 		if (_distanceToTarget.x - 70 > 0 && _isMovableObject && _allowMoveLeft)
 		{
 			//move right		
-			_velocity.x = _velocity.y = _speed;
+			_velocity.x = _speed;
 		}
 		else if (_distanceToTarget.x + 70 < 0 && _isMovableObject && _allowMoveRight)
 		{
 			//move left
-			_velocity.x = _velocity.y = -1 * _speed;
+			_velocity.x = -1 * _speed;
 		}
 		else
 		{
 			//_velocity.x = 0;
 		}
 
-		if (_distanceToTarget.y -50 > 0 && _isMovableObject && _allowMoveRight)
+		if (_distanceToTarget.y - 50 > 0 && _isMovableObject && _allowMoveRight)
 		{
 			//move right
 			_velocity.y = _speed;
@@ -73,11 +75,6 @@ void Enemy3::Update(float deltaTime)
 		{
 			//_velocity.y = 0;
 		}
-	}
-	else
-	{
-		//v=0
-		//_velocity.x = 0;
 	}
 	
 	GameObject::Update(deltaTime);

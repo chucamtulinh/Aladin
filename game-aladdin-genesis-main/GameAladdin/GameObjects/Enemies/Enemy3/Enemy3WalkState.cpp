@@ -26,13 +26,13 @@ void Enemy3WalkState::Update(float deltaTime)
 	//change state
 	if (_enemy->GetVelocity().x == 0)//change state
 	{
-		_enemy->SetState(new Enemy3IdleState(_enemy));
+		//_enemy->SetState(new Enemy3IdleState(_enemy));
 		return;
 	}
 
 	if (!_enemy->IsTargetInAttackRange())
 	{
-		_enemy->SetState(new Enemy3IdleState(_enemy));
+		//_enemy->SetState(new Enemy3IdleState(_enemy));
 		return;
 	}
 
